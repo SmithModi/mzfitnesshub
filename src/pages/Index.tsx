@@ -8,7 +8,7 @@ const Index = () => {
   // SEO optimization for homepage
   useEffect(() => {
     document.title = "MZ Fitness Hub - Best Gym in Rajkot | Premium Fitness Center Gujarat";
-    
+
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -41,7 +41,6 @@ const Index = () => {
       }
     });
     document.head.appendChild(script);
-
     return () => {
       document.head.removeChild(script);
     };
@@ -255,14 +254,7 @@ const Index = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-gray-300">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-            </div>
-          </div>
-        </div>
+        
       </section>
 
       {/* Stats Section */}
