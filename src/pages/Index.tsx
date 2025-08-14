@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 const Index = () => {
   // SEO optimization for homepage
   useEffect(() => {
-    document.title = "MZ Fitness Hub - Best Gym in Rajkot | Premium Fitness Center Gujarat";
+    document.title = "MZ Fitnezz Hub - Best Gym in Rajkot | Premium Fitness Center Gujarat";
 
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -21,7 +21,7 @@ const Index = () => {
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "MZ Fitness Hub - Best Gym in Rajkot",
+      "name": "MZ Fitnezz Hub - Best Gym in Rajkot",
       "description": "Premier fitness center in Rajkot offering personal training, group classes, and complete wellness solutions",
       "url": "https://mzfitnezz.in/",
       "mainEntity": {
