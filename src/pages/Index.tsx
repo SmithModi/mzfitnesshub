@@ -127,9 +127,7 @@ const Index = () => {
                   </span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl">
-                  Join MZ Fitness Hub - Rajkot's premier fitness destination with expert trainers, modern equipment, and proven results. Transform your health with Gujarat's top-rated gym experience.
-                </p>
+                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl">Join MZ Fitnezz Hub - Rajkot's premier fitness destination with expert trainers, modern equipment, and proven results. Transform your health with Gujarat's top-rated gym experience.</p>
               </div>
 
               {/* Action Buttons */}
