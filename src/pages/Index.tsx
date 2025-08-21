@@ -21,7 +21,7 @@ const Index = () => {
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "MZ Fitnezz Hub - Best Gym in Rajkot",
+      "name": "MZ Fitnezz Hub - Best Medico Gym in Rajkot",
       "description": "Premier fitness center in Rajkot offering personal training, group classes, and complete wellness solutions",
       "url": "https://mzfitnezz.in/",
       "mainEntity": {
@@ -121,7 +121,7 @@ const Index = () => {
                 </div>
                 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  Best Gym in
+                  Best Medico Gym in
                   <span className="block bg-gradient-to-r from-primary via-orange-400 to-yellow-400 bg-clip-text text-transparent">
                     Rajkot Gujarat
                   </span>
