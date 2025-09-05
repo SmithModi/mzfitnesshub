@@ -200,7 +200,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">What Makes Us Different ?</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-bold">
               Discover why MZ Fitness Hub is Rajkot's preferred choice for fitness transformation
             </p>
           </div>
