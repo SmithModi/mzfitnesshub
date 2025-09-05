@@ -5,12 +5,10 @@ import { Users, Clock, CheckCircle, Heart, Target, Award, Zap, Shield, Star, Tre
 const About = () => {
   useEffect(() => {
     document.title = "About MZ Fitness Hub - Best Gym in Rajkot | Our Story & Mission";
-    
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Learn about MZ Fitness Hub - Rajkot\'s premier fitness center. Discover our mission, expert trainers, state-of-the-art facilities, and commitment to transforming lives through fitness in Gujarat.');
     }
-
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify({
@@ -21,7 +19,7 @@ const About = () => {
       "url": "https://mzfitnezz.in/about",
       "mainEntity": {
         "@type": "Gym",
-        "name": "MZ Fitness Hub", 
+        "name": "MZ Fitness Hub",
         "description": "Premier fitness center in Rajkot with expert trainers and modern facilities",
         "address": {
           "@type": "PostalAddress",
@@ -34,7 +32,6 @@ const About = () => {
       }
     });
     document.head.appendChild(script);
-
     return () => {
       document.head.removeChild(script);
     };
@@ -49,7 +46,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               About <span className="text-orange-200">MZ Fitness Hub</span> - Rajkot's Premier Fitness Center
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed opacity-90">
+            <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed opacity-90 font-bold">
               Rajkot's premier fitness destination where transformation meets dedication. We're more than a gym - we're your fitness family.
             </p>
           </div>
