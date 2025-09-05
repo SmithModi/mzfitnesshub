@@ -60,7 +60,7 @@ const About = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
               <p className="text-base text-gray-600 mb-4 leading-relaxed">
-                Located in the heart of Rajkot at Anant Chaya Complex, MZ Fitness Hub was born from a passion to transform lives through fitness. 
+                <span className="font-semibold">Located in the heart of Rajkot at Anant Chaya Complex, MZ Fitness Hub was born from a passion to transform lives through fitness.</span> 
                 We recognized that Rajkot needed a fitness center that combined world-class equipment with personalized attention and a supportive community.
               </p>
               <p className="text-base text-gray-600 mb-4 leading-relaxed">
