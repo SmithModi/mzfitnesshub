@@ -2,10 +2,8 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { CheckCircle, Users, Clock, Calendar, Trophy, Zap, Heart, Shield, Target, Star } from 'lucide-react';
-
 const WhyJoin = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Header />
       
       {/* Hero Section */}
@@ -15,7 +13,7 @@ const WhyJoin = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
               Why Choose <span className="text-yellow-400">MZ Fitness Hub?</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed opacity-90 px-2">
+            <p className="text-base sm:text-lg max-w-2xl mx-auto leading-relaxed opacity-90 px-2 md:text-lg font-semibold">
               Discover the MZ Fitness Hub difference - where cutting-edge facilities meet personalized care and community support.
             </p>
           </div>
@@ -346,8 +344,6 @@ const WhyJoin = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default WhyJoin;
