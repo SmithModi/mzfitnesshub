@@ -70,7 +70,11 @@ const Footer = () => {
           </p>
           <p className="text-gray-400 text-sm">
             Made with 💗 by{' '}
-            <HoverPeek url="https://www.somethingmedia.in/">
+            <HoverPeek 
+              url="https://www.somethingmedia.in/"
+              isStatic={true}
+              imageSrc="https://www.mzfitnezz.in/somethingmedia.png"
+            >
               <a
                 href="https://www.somethingmedia.in/"
                 target="_blank"
