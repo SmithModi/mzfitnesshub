@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Mail, Phone, Clock } from 'lucide-react';
+import { HoverPeek } from './ui/link-preview';
 const Footer = () => {
   return <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -63,9 +64,22 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center space-y-2">
           <p className="text-gray-400 text-sm">
             © 2024 MZ Fitness Hub. All rights reserved. Transform your life with us.
+          </p>
+          <p className="text-gray-400 text-sm">
+            Made with 💗 by{' '}
+            <HoverPeek url="https://www.somethingmedia.in/">
+              <a
+                href="https://www.somethingmedia.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors font-medium underline decoration-primary/40 decoration-dotted hover:decoration-primary hover:decoration-solid"
+              >
+                SomethingMedia
+              </a>
+            </HoverPeek>
           </p>
         </div>
       </div>
