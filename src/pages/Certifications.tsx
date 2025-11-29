@@ -1,8 +1,9 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Award, Calendar, MapPin } from 'lucide-react';
+import { Award, Calendar, MapPin, Trophy, Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Certifications = () => {
@@ -65,116 +66,212 @@ const Certifications = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen relative">
+      {/* Universal Noisy Background */}
+      <div className="fixed inset-0 bg-[#F9F9F9] -z-10">
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
+            backgroundSize: '300px 300px',
+            mixBlendMode: 'multiply'
+          }}
+        />
+      </div>
+
       <Header />
-      
-      {/* Hero Section - Simplified */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Certifications</h1>
-            <p className="text-lg text-gray-600">
-              Professional qualifications and achievements demonstrating expertise across fitness training, martial arts, and innovation.
-            </p>
+
+      {/* Elegant Hero Section */}
+      <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 overflow-hidden font-serif">
+        {/* Subtle Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/5 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-5xl mx-auto">
+
+            {/* Main Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-normal text-gray-900 mb-6 tracking-tight leading-[1.1]"
+            >
+              Professional
+              <br />
+              <span className="text-orange-500">Certifications</span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-14 font-serif"
+            >
+              Expertise across fitness training, martial arts, and innovation, backed by professional qualifications and world-class achievements.
+            </motion.p>
+
+            {/* Stats Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              className="grid grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto"
+            >
+              {[
+                { number: '5', label: 'Certifications', icon: Award },
+                { number: '8+', label: 'Years Experience', icon: Trophy },
+                { number: '4', label: 'Specializations', icon: Star },
+              ].map((stat, index) => {
+                const IconComponent = stat.icon;
+                return (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1, ease: "easeOut" }}
+                    className="group relative"
+                  >
+                    <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:bg-white/80 hover:border-orange-500/30 hover:shadow-lg hover:-translate-y-1">
+                      {/* Noise Overlay */}
+                      <div
+                        className="absolute inset-0 opacity-20 rounded-2xl pointer-events-none"
+                        style={{
+                          backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
+                          backgroundSize: '300px 300px',
+                          mixBlendMode: 'multiply'
+                        }}
+                      />
+
+                      <div className="relative">
+                        <div className="flex items-center justify-center mb-3">
+                          <div className="p-2.5 rounded-xl bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors duration-300">
+                            <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-orange-500" strokeWidth={1.5} />
+                          </div>
+                        </div>
+                        <div className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-1.5">
+                          {stat.number}
+                        </div>
+                        <div className="text-xs md:text-sm text-gray-600 font-medium tracking-wide">
+                          {stat.label}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          
-          {/* Simple Stats */}
-          <div className="grid grid-cols-3 gap-8 mb-16 text-center">
-            <div>
-              <div className="text-3xl font-bold text-gray-900">5</div>
-              <div className="text-sm text-gray-600">Certifications</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-gray-900">8+</div>
-              <div className="text-sm text-gray-600">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-gray-900">4</div>
-              <div className="text-sm text-gray-600">Specializations</div>
-            </div>
-          </div>
+      {/* Certifications List Section */}
+      <section className="relative py-16 sm:py-20 md:py-24">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Certifications List */}
           <div className="space-y-8">
-            {certificates.map((cert) => (
-              <Card key={cert.id} className="overflow-hidden border border-gray-200 hover:shadow-md transition-shadow">
-                <div className="grid md:grid-cols-2 gap-0">
-                  {/* Certificate Image */}
-                  <div className="relative">
-                    <img 
-                      src={cert.image} 
-                      alt={cert.title}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-white text-gray-700 px-3 py-1 rounded text-sm">
-                        {cert.category}
-                      </span>
+            {certificates.map((cert, index) => (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              >
+                <Card className="overflow-hidden border-0 bg-white/60 backdrop-blur-sm hover:bg-white/80 hover:shadow-xl transition-all duration-500">
+                  <div className="grid md:grid-cols-2 gap-0">
+                    {/* Certificate Image */}
+                    <div className="relative">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-64 md:h-full object-cover"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1.5 rounded-full text-sm font-medium border border-gray-200/50">
+                          {cert.category}
+                        </span>
+                      </div>
                     </div>
+
+                    {/* Certificate Details */}
+                    <CardContent className="p-8 font-serif">
+                      <div className="mb-2">
+                        <span className="text-sm text-orange-500 uppercase tracking-wide font-medium">
+                          {cert.type}
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl font-serif font-normal text-gray-900 mb-3">
+                        {cert.title}
+                      </h3>
+
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        {cert.description}
+                      </p>
+
+                      <div className="space-y-3">
+                        <div className="flex items-center text-gray-700 text-sm">
+                          <Award className="h-4 w-4 mr-3 text-orange-500" />
+                          <span>{cert.organization}</span>
+                        </div>
+                        <div className="flex items-center text-gray-700 text-sm">
+                          <Calendar className="h-4 w-4 mr-3 text-orange-500" />
+                          <span>{cert.date}</span>
+                        </div>
+                        <div className="flex items-center text-gray-700 text-sm">
+                          <MapPin className="h-4 w-4 mr-3 text-orange-500" />
+                          <span>{cert.location}</span>
+                        </div>
+                      </div>
+                    </CardContent>
                   </div>
-                  
-                  {/* Certificate Details */}
-                  <CardContent className="p-8">
-                    <div className="mb-2">
-                      <span className="text-sm text-gray-500 uppercase tracking-wide">
-                        {cert.type}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                      {cert.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 mb-6">
-                      {cert.description}
-                    </p>
-                    
-                    <div className="space-y-2">
-                      <div className="flex items-center text-gray-700 text-sm">
-                        <Award className="h-4 w-4 mr-3 text-gray-400" />
-                        <span>{cert.organization}</span>
-                      </div>
-                      <div className="flex items-center text-gray-700 text-sm">
-                        <Calendar className="h-4 w-4 mr-3 text-gray-400" />
-                        <span>{cert.date}</span>
-                      </div>
-                      <div className="flex items-center text-gray-700 text-sm">
-                        <MapPin className="h-4 w-4 mr-3 text-gray-400" />
-                        <span>{cert.location}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
           </div>
 
-          {/* Simple Call to Action */}
-          <div className="mt-16 text-center">
-            <div className="bg-gray-50 p-12 rounded-lg">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Ready to Start Your Fitness Journey?</h3>
-              <p className="text-gray-600 mb-8">
-                Train with a certified professional who brings years of experience and proven expertise.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-primary text-white px-8 py-3 rounded font-medium hover:bg-primary/90 transition-colors">
-                  Contact Us Today
-                </button>
-                <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded font-medium hover:bg-gray-50 transition-colors">
-                  View Our Services
-                </button>
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mt-16"
+          >
+            <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 p-12 rounded-2xl text-center">
+              {/* Noise Overlay */}
+              <div
+                className="absolute inset-0 opacity-20 rounded-2xl pointer-events-none"
+                style={{
+                  backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
+                  backgroundSize: '300px 300px',
+                  mixBlendMode: 'multiply'
+                }}
+              />
+
+              <div className="relative">
+                <h3 className="text-3xl md:text-4xl font-serif font-normal text-gray-900 mb-4">
+                  Ready to Start Your <span className="text-orange-500">Fitness Journey?</span>
+                </h3>
+                <p className="text-gray-600 mb-8 max-w-2xl mx-auto font-serif text-lg">
+                  Train with a certified professional who brings years of experience and proven expertise.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="bg-orange-500 text-white px-8 py-3 rounded-full font-medium hover:bg-orange-600 transition-all duration-300 hover:shadow-lg hover:scale-105">
+                    Contact Us Today
+                  </button>
+                  <button className="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full font-medium hover:bg-white hover:border-orange-500 hover:text-orange-500 transition-all duration-300">
+                    View Our Services
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

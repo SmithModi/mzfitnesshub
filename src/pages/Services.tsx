@@ -1,16 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Users, Target, Dumbbell, Heart, Activity } from 'lucide-react';
-import { Card, CardContent } from '../components/ui/card';
-import { Button } from '../components/ui/button';
 import ProgramModal from '../components/ProgramModal';
+import { GradientCard } from '../components/ui/gradient-card';
 
 const Services = () => {
   useEffect(() => {
     document.title = "Services - MZ Fitness Hub Rajkot | Personal Training, Group Classes & Nutrition";
-    
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Comprehensive fitness services at MZ Fitness Hub Rajkot. Personal training, group fitness classes, nutrition coaching, strength training, and wellness programs. Join Gujarat\'s premier fitness center.');
@@ -52,7 +52,7 @@ const Services = () => {
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Service", 
+              "@type": "Service",
               "name": "Group Fitness Classes",
               "description": "Energetic group workout sessions for all fitness levels"
             }
@@ -77,52 +77,40 @@ const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Service data for gradient cards
   const services = [
     {
-      icon: Target,
-      title: "Personal Training",
-      description: "One-on-one sessions with certified trainers tailored to your specific goals and fitness level.",
-      features: ["Customized workout plans", "Progress tracking", "Nutritional guidance", "Flexible scheduling"],
-      duration: "60 mins",
-      level: "All Levels",
-      participants: "1-on-1"
+      title: "Gymnasium",
+      description: "Complete gym facilities with cardio, weight lifting, personal training, nutrition guidance, and aqua training programs.",
+      ctaText: "Explore Services",
+      ctaHref: "/gymnasium-in-rajkot",
+      imageUrl: "/services/gym.png",
+      gradient: "orange" as const,
     },
     {
-      icon: Users,
-      title: "Group Classes",
-      description: "Energetic group sessions that combine fitness with community spirit and motivation.",
-      features: ["Variety of class types", "All fitness levels", "Social environment", "Expert instruction"],
-      duration: "45 mins",
-      level: "Beginner to Advanced",
-      participants: "8-15"
+      title: "Floor Training",
+      description: "Functional training, CrossFit, yoga, Zumba, and strength training programs designed for all fitness levels.",
+      ctaText: "View Programs",
+      ctaHref: "/floor-training-in-rajkot",
+      imageUrl: "/services/floortraining.png",
+      gradient: "pink" as const,
     },
     {
-      icon: Dumbbell,
-      title: "Strength Training",
-      description: "Build muscle, increase power, and enhance your overall strength with our comprehensive programs.",
-      features: ["Progressive overload", "Form correction", "Equipment variety", "Strength assessments"],
-      duration: "90 mins",
-      level: "Intermediate+",
-      participants: "4-8"
+      title: "Physio",
+      description: "Professional physiotherapy services including pain management, rehab exercises, consulting, and home visits.",
+      ctaText: "Book Session",
+      ctaHref: "/physio-in-rajkot",
+      imageUrl: "/services/physio.png",
+      gradient: "purple" as const,
     },
     {
-      icon: Activity,
-      title: "Cardio Workouts",
-      description: "Improve cardiovascular health and endurance through dynamic and engaging cardio sessions.",
-      features: ["HIIT training", "Endurance building", "Heart rate monitoring", "Fun workout variety"],
-      duration: "30-45 mins",
-      level: "All Levels",
-      participants: "6-12"
+      title: "Wellness",
+      description: "Comprehensive wellness services with facial treatments, body shaping, MARM therapy, and laser treatment options.",
+      ctaText: "Learn More",
+      ctaHref: "/wellness-in-rajkot",
+      imageUrl: "/services/wellness.png",
+      gradient: "green" as const,
     },
-    {
-      icon: Heart,
-      title: "Yoga & Mindfulness",
-      description: "Find balance and inner peace while improving flexibility, strength, and mental wellness.",
-      features: ["Multiple yoga styles", "Meditation sessions", "Stress relief", "Mind-body connection"],
-      duration: "60 mins",
-      level: "All Levels",
-      participants: "8-20"
-    }
   ];
 
   const handleViewDetails = (service) => {
@@ -138,79 +126,169 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/20 to-secondary/30">
       <Header />
-      
-      {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight leading-tight">
-              Our Premium <span className="text-primary">Services</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
-              Discover our comprehensive range of fitness services designed to transform your body, 
-              mind, and lifestyle with personalized attention and expert guidance.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Services Grid */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <Card 
-                  key={service.title}
-                  className="group hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm hover:bg-card/90 md:hover:-translate-y-2"
-                >
-                  <CardContent className="p-4 sm:p-6 md:p-8 text-center">
-                    {/* Icon */}
-                    <div className="flex justify-center mb-4 sm:mb-6">
-                      <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl sm:rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 text-primary" />
+
+
+      {/* Elegant Hero Section - Following Design System */}
+      <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 overflow-hidden font-serif">
+        {/* Noisy Background */}
+        <div className="absolute inset-0 bg-[#F9F9F9]">
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
+              backgroundSize: '300px 300px',
+              mixBlendMode: 'multiply'
+            }}
+          />
+        </div>
+
+        {/* Subtle Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/5 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-5xl mx-auto">
+
+            {/* Main Heading - Instrument Serif */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-normal text-gray-900 mb-6 tracking-tight leading-[1.1]"
+            >
+              Transform Your Life
+              <br />
+              <span className="text-orange-500">With Excellence</span>
+            </motion.h1>
+
+            {/* Elegant Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-14 font-serif"
+            >
+              Experience our comprehensive range of premium fitness services,
+              meticulously designed to elevate your wellness journey.
+            </motion.p>
+
+            {/* Refined Stats Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto"
+            >
+              {[
+                { number: '4', label: 'Core Functions', icon: Target },
+                { number: '15+', label: 'Specialized Services', icon: Dumbbell },
+                { number: '500+', label: 'Satisfied Members', icon: Users },
+                { number: '100%', label: 'Commitment', icon: Heart },
+              ].map((stat, index) => {
+                const IconComponent = stat.icon;
+                return (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1, ease: "easeOut" }}
+                    className="group relative"
+                  >
+                    {/* Card with Noisy Background */}
+                    <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:bg-white/80 hover:border-orange-500/30 hover:shadow-lg hover:-translate-y-1">
+                      {/* Noise Overlay */}
+                      <div
+                        className="absolute inset-0 opacity-20 rounded-2xl pointer-events-none"
+                        style={{
+                          backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
+                          backgroundSize: '300px 300px',
+                          mixBlendMode: 'multiply'
+                        }}
+                      />
+
+                      <div className="relative">
+                        {/* Icon */}
+                        <div className="flex items-center justify-center mb-3">
+                          <div className="p-2.5 rounded-xl bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors duration-300">
+                            <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-orange-500" strokeWidth={1.5} />
+                          </div>
+                        </div>
+
+                        {/* Number */}
+                        <div className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-1.5">
+                          {stat.number}
+                        </div>
+
+                        {/* Label */}
+                        <div className="text-xs md:text-sm text-gray-600 font-medium tracking-wide">
+                          {stat.label}
+                        </div>
                       </div>
                     </div>
-                    
-                    {/* Service Name */}
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 group-hover:text-primary transition-colors duration-300 leading-tight">
-                      {service.title}
-                    </h3>
-                    
-                    {/* View Details Button */}
-                    <Button
-                      onClick={() => handleViewDetails(service)}
-                      variant="outline"
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-sm sm:text-base py-2 sm:py-3"
-                    >
-                      View Details
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary/5 to-secondary/5">
-        <div className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            Ready to Start Your Fitness Journey?
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
-            Choose from our premium services and let our expert team guide you towards achieving your fitness goals 
-            with personalized attention and proven methodologies.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
-            <Button className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg md:hover:scale-105 text-sm sm:text-base">
-              Book a Consultation
-            </Button>
-            <Button variant="outline" className="border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-sm sm:text-base">
-              View Membership Plans
-            </Button>
+
+      {/* Services Grid with Elegant Background */}
+      <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden font-serif">
+        {/* Noisy Background */}
+        <div className="absolute inset-0 bg-[#F9F9F9]">
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
+              backgroundSize: '300px 300px',
+              mixBlendMode: 'multiply'
+            }}
+          />
+        </div>
+
+        {/* Subtle Gradient Overlay */}
+        <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-0 transition-all duration-500 hover:bg-white/80 hover:border-orange-500/30 hover:shadow-lg hover:-translate-y-1 " />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-gray-900 mb-4">
+              Our <span className="text-orange-500">Core Functions</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              Explore our specialized services designed to meet your unique fitness goals
+            </p>
+          </motion.div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              >
+                <GradientCard
+                  title={service.title}
+                  description={service.description}
+                  ctaText={service.ctaText}
+                  ctaHref={service.ctaHref}
+                  imageUrl={service.imageUrl}
+                  gradient={service.gradient}
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

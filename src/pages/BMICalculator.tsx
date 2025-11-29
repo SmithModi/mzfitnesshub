@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Calculator, Heart, Activity, Target, TrendingUp } from 'lucide-react';
+import { Heart, Scale, Ruler, Apple, TrendingUp } from 'lucide-react';
 
 const BMICalculator = () => {
   const [height, setHeight] = useState('');
@@ -15,9 +16,9 @@ const BMICalculator = () => {
       const heightInMeters = parseFloat(height) / 100;
       const weightInKg = parseFloat(weight);
       const bmiValue = weightInKg / (heightInMeters * heightInMeters);
-      
+
       setBmi(Math.round(bmiValue * 10) / 10);
-      
+
       if (bmiValue < 18.5) {
         setCategory('Underweight');
       } else if (bmiValue >= 18.5 && bmiValue < 25) {
@@ -34,176 +35,215 @@ const BMICalculator = () => {
   }, [height, weight]);
 
   const getBMIColor = () => {
-    if (!bmi) return 'text-gray-500';
-    if (bmi < 18.5) return 'text-blue-500';
-    if (bmi >= 18.5 && bmi < 25) return 'text-green-500';
-    if (bmi >= 25 && bmi < 30) return 'text-yellow-500';
-    return 'text-red-500';
+    if (!bmi) return 'text-gray-400';
+    if (bmi < 18.5) return 'text-blue-400';
+    if (bmi >= 18.5 && bmi < 25) return 'text-green-400';
+    if (bmi >= 25 && bmi < 30) return 'text-yellow-400';
+    return 'text-red-400';
   };
 
   const getBMIBgColor = () => {
-    if (!bmi) return 'bg-gray-50';
-    if (bmi < 18.5) return 'bg-blue-50';
-    if (bmi >= 18.5 && bmi < 25) return 'bg-green-50';
-    if (bmi >= 25 && bmi < 30) return 'bg-yellow-50';
-    return 'bg-red-50';
+    if (!bmi) return 'bg-gray-900/50';
+    if (bmi < 18.5) return 'bg-blue-900/50';
+    if (bmi >= 18.5 && bmi < 25) return 'bg-green-900/50';
+    if (bmi >= 25 && bmi < 30) return 'bg-yellow-900/50';
+    return 'bg-red-900/50';
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen relative">
+      {/* Universal Gradient Background - Darker Black */}
+      <div className="fixed inset-0 bg-gradient-to-r from-black via-black to-orange-500 -z-10"></div>
+
+      {/* Additional Glow for depth */}
+      <div className="fixed top-[-20%] right-[-20%] w-[70%] h-[90%] bg-orange-500/30 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-            <Calculator className="h-10 w-10 text-blue-600" />
+      <section className="relative pt-32 pb-16 overflow-hidden font-serif">
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium text-white mb-4">
+              BMI Calculator
+            </h1>
+            <p className="text-xl text-gray-300 font-serif max-w-2xl mx-auto">
+              Calculate your Body Mass Index and understand your health status
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            BMI Calculator
-          </h1>
-          <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            Calculate your Body Mass Index and understand your health status
-          </p>
         </div>
       </section>
 
       {/* Calculator Section */}
-      <section className="py-16">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {/* Height Input */}
-              <div>
-                <label className="block text-base font-semibold text-gray-800 mb-3">
-                  Height (cm)
-                </label>
-                <div className="relative">
-                  <input
-                    type="number"
-                    value={height}
-                    onChange={(e) => setHeight(e.target.value)}
-                    placeholder="Enter height"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200"
-                  />
-                  <div className="absolute right-3 top-3 text-gray-400">
-                    <Activity className="h-5 w-5" />
+      <section className="relative py-8 sm:py-12">
+        <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 md:p-10 shadow-2xl"
+          >
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Height Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-200 mb-2 font-serif">
+                    Height (cm)
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="number"
+                      value={height}
+                      onChange={(e) => setHeight(e.target.value)}
+                      placeholder="Enter height"
+                      className="w-full px-4 py-3.5 pr-12 bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all duration-200 font-serif"
+                    />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-orange-500">
+                      <Ruler className="h-5 w-5" strokeWidth={1.5} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Weight Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-200 mb-2 font-serif">
+                    Weight (kg)
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="number"
+                      value={weight}
+                      onChange={(e) => setWeight(e.target.value)}
+                      placeholder="Enter weight"
+                      className="w-full px-4 py-3.5 pr-12 bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all duration-200 font-serif"
+                    />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-orange-500">
+                      <Scale className="h-5 w-5" strokeWidth={1.5} />
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Weight Input */}
-              <div>
-                <label className="block text-base font-semibold text-gray-800 mb-3">
-                  Weight (kg)
-                </label>
-                <div className="relative">
-                  <input
-                    type="number"
-                    value={weight}
-                    onChange={(e) => setWeight(e.target.value)}
-                    placeholder="Enter weight"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200"
-                  />
-                  <div className="absolute right-3 top-3 text-gray-400">
-                    <Target className="h-5 w-5" />
+              {/* BMI Result */}
+              {bmi && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className={`${getBMIBgColor()} backdrop-blur-sm rounded-xl p-8 mb-8 border-2 border-white/10`}
+                >
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-4">
+                      <Heart className={`h-7 w-7 ${getBMIColor()} mr-2`} strokeWidth={1.5} />
+                      <span className="text-xl font-serif font-normal text-white">Your BMI Result</span>
+                    </div>
+                    <div className={`text-6xl font-serif font-normal ${getBMIColor()} mb-3`}>
+                      {bmi}
+                    </div>
+                    <div className={`text-2xl font-serif font-normal ${getBMIColor()} mb-4`}>
+                      {category}
+                    </div>
+                    <p className="text-gray-300 font-serif leading-relaxed max-w-md mx-auto">
+                      {bmi < 18.5 && "You may be underweight. Consider consulting with a healthcare provider."}
+                      {bmi >= 18.5 && bmi < 25 && "You have a healthy weight! Keep up with balanced diet and exercise."}
+                      {bmi >= 25 && bmi < 30 && "You may be overweight. Consider adopting healthier lifestyle habits."}
+                      {bmi >= 30 && "You may be obese. We recommend consulting with a healthcare provider."}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* BMI Scale Reference */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <h3 className="text-lg font-serif font-normal text-white mb-4 text-center">BMI Categories</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg border border-blue-500/20">
+                    <span className="font-medium text-blue-300 font-serif">Underweight</span>
+                    <span className="text-blue-400 font-semibold">&lt; 18.5</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-green-900/30 rounded-lg border border-green-500/20">
+                    <span className="font-medium text-green-300 font-serif">Normal</span>
+                    <span className="text-green-400 font-semibold">18.5 - 24.9</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-yellow-900/30 rounded-lg border border-yellow-500/20">
+                    <span className="font-medium text-yellow-300 font-serif">Overweight</span>
+                    <span className="text-yellow-400 font-semibold">25.0 - 29.9</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-red-900/30 rounded-lg border border-red-500/20">
+                    <span className="font-medium text-red-300 font-serif">Obese</span>
+                    <span className="text-red-400 font-semibold">≥ 30.0</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* BMI Result */}
-            {bmi && (
-              <div className={`${getBMIBgColor()} rounded-xl p-6 mb-6 border-2 border-opacity-20`}>
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-3">
-                    <Heart className={`h-6 w-6 ${getBMIColor()} mr-2`} />
-                    <span className="text-lg font-semibold text-gray-800">Your BMI Result</span>
-                  </div>
-                  <div className={`text-4xl font-bold ${getBMIColor()} mb-2`}>
-                    {bmi}
-                  </div>
-                  <div className={`text-lg font-semibold ${getBMIColor()} mb-3`}>
-                    {category}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    {bmi < 18.5 && "You may be underweight. Consider consulting with a healthcare provider."}
-                    {bmi >= 18.5 && bmi < 25 && "You have a healthy weight! Keep up with balanced diet and exercise."}
-                    {bmi >= 25 && bmi < 30 && "You may be overweight. Consider adopting healthier lifestyle habits."}
-                    {bmi >= 30 && "You may be obese. We recommend consulting with a healthcare provider."}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* BMI Scale Reference */}
-            <div className="bg-gray-50 rounded-xl p-4">
-              <h3 className="text-base font-semibold text-gray-800 mb-3 text-center">BMI Categories</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="flex justify-between items-center p-2 bg-blue-50 rounded-lg">
-                  <span className="font-medium text-blue-800 text-sm">Underweight</span>
-                  <span className="text-blue-600 font-semibold text-sm">&lt; 18.5</span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-green-50 rounded-lg">
-                  <span className="font-medium text-green-800 text-sm">Normal</span>
-                  <span className="text-green-600 font-semibold text-sm">18.5 - 24.9</span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-yellow-50 rounded-lg">
-                  <span className="font-medium text-yellow-800 text-sm">Overweight</span>
-                  <span className="text-yellow-600 font-semibold text-sm">25.0 - 29.9</span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-red-50 rounded-lg">
-                  <span className="font-medium text-red-800 text-sm">Obese</span>
-                  <span className="text-red-600 font-semibold text-sm">≥ 30.0</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Health Tips */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-green-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Health Tips
+      <section className="relative py-16 sm:py-20 md:py-24">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-4">
+              Health <span className="text-orange-500">Tips</span>
             </h2>
-            <p className="text-lg text-gray-600">
-              Actionable advice for better health
+            <p className="text-lg text-gray-300 font-serif max-w-2xl mx-auto">
+              Actionable advice for better health and wellness
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <Heart className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Regular Exercise</h3>
-              <p className="text-gray-600 text-sm">
-                Aim for 150 minutes of moderate exercise per week for optimal health.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <Activity className="h-6 w-6 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Balanced Diet</h3>
-              <p className="text-gray-600 text-sm">
-                Focus on whole foods, fruits, vegetables, and lean proteins.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <TrendingUp className="h-6 w-6 text-purple-600" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Track Progress</h3>
-              <p className="text-gray-600 text-sm">
-                Monitor your health metrics regularly to stay on track.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Heart,
+                title: 'Regular Exercise',
+                description: 'Aim for 150 minutes of moderate exercise per week for optimal health and fitness.'
+              },
+              {
+                icon: Apple,
+                title: 'Balanced Diet',
+                description: 'Focus on whole foods, fruits, vegetables, lean proteins, and healthy fats.'
+              },
+              {
+                icon: TrendingUp,
+                title: 'Track Progress',
+                description: 'Monitor your health metrics regularly to stay motivated and on track.'
+              }
+            ].map((tip, index) => {
+              const IconComponent = tip.icon;
+              return (
+                <motion.div
+                  key={tip.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/15 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 h-full">
+                    <div className="relative">
+                      <div className="inline-flex items-center justify-center p-4 rounded-xl bg-orange-500/20 group-hover:bg-orange-500/30 transition-colors duration-300 mb-5">
+                        <IconComponent className="h-8 w-8 text-orange-500" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="text-2xl font-serif font-normal text-white mb-3">
+                        {tip.title}
+                      </h3>
+                      <p className="text-gray-300 font-serif leading-relaxed">
+                        {tip.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
