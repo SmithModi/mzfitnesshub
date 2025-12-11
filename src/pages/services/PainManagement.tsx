@@ -21,15 +21,7 @@ const PainManagement = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#F9F9F9] font-serif relative">
-            {/* Consistent Noisy Background Layer */}
-            <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute inset-0 opacity-40" style={{
-                    backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-                    backgroundSize: '300px 300px',
-                    mixBlendMode: 'multiply'
-                }}></div>
-            </div>
+        <div className="min-h-screen bg-white font-serif relative">
 
             <div className="relative z-10">
                 <Header />

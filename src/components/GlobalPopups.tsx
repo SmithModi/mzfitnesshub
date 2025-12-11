@@ -26,18 +26,18 @@ const GlobalPopups = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={handleWhatsAppClick}
-          className="bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+          className="transition-all duration-300 transform hover:scale-110"
           aria-label="Contact us on WhatsApp"
         >
-          <img src="/lovable-uploads/c0708685-05ac-4730-aff4-b8696ab4558c.png" alt="WhatsApp" className="h-10 w-10" />
+          <img src="/lovable-uploads/whatsappicon.webp" alt="WhatsApp" className="h-16 w-16" />
         </button>
       </div>
 
       {/* Google Review Button - Bottom Left */}
-      <div className="fixed bottom-6 left-6 z-50">
+      <div className="fixed bottom-9 left-6 z-50">
         <button
           onClick={() => window.open("https://search.google.com/local/writereview?placeid=ChIJp8jtjTvKWTkRCNkcJuxhTSk", '_blank')}
-          className="bg-white hover:bg-gray-50 text-gray-700 w-14 h-14 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center border border-gray-200"
+          className="transition-all duration-300 transform hover:scale-110"
           aria-label="Leave us a Google Review"
         >
           <img src="/lovable-uploads/f7372f84-8ae6-4d3c-ab38-8a61644ab59c.png" alt="Google Reviews" className="h-10 w-10" />
@@ -63,7 +63,7 @@ const GlobalPopups = () => {
                 <X className="h-5 w-5" />
               </button>
             </div>
-            
+
             {/* Content */}
             <div className="p-4">
               {/* Star Rating */}
@@ -73,11 +73,11 @@ const GlobalPopups = () => {
                 ))}
                 <span className="ml-2 text-gray-600 font-medium">5.0</span>
               </div>
-              
+
               <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                 At MZ Fitness Hub, our expert team provides premium fitness training and wellness services. We pride ourselves on quality coaching and member satisfaction. Share your experience with us!
               </p>
-              
+
               {/* Action Button */}
               <button
                 onClick={handleGoogleReviewClick}

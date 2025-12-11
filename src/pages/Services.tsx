@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Users, Target, Dumbbell, Heart, Activity } from 'lucide-react';
+import { Users, Target, Dumbbell, Heart, Activity, Sparkles } from 'lucide-react';
 import ProgramModal from '../components/ProgramModal';
 import { GradientCard } from '../components/ui/gradient-card';
 
@@ -86,6 +86,7 @@ const Services = () => {
       ctaHref: "/gymnasium-in-rajkot",
       imageUrl: "/services/gym.png",
       gradient: "orange" as const,
+      icon: Dumbbell,
     },
     {
       title: "Floor Training",
@@ -94,6 +95,7 @@ const Services = () => {
       ctaHref: "/floor-training-in-rajkot",
       imageUrl: "/services/floortraining.png",
       gradient: "pink" as const,
+      icon: Target,
     },
     {
       title: "Physio",
@@ -102,6 +104,7 @@ const Services = () => {
       ctaHref: "/physio-in-rajkot",
       imageUrl: "/services/physio.png",
       gradient: "purple" as const,
+      icon: Activity,
     },
     {
       title: "Wellness",
@@ -110,6 +113,7 @@ const Services = () => {
       ctaHref: "/wellness-in-rajkot",
       imageUrl: "/services/wellness.png",
       gradient: "green" as const,
+      icon: Sparkles,
     },
   ];
 
@@ -132,15 +136,7 @@ const Services = () => {
       {/* Elegant Hero Section - Following Design System */}
       <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 overflow-hidden font-serif">
         {/* Noisy Background */}
-        <div className="absolute inset-0 bg-[#F9F9F9]">
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}
-          />
+        <div className="absolute inset-0 bg-white">
         </div>
 
         {/* Subtle Gradient Overlay */}
@@ -197,14 +193,7 @@ const Services = () => {
                     {/* Card with Noisy Background */}
                     <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:bg-white/80 hover:border-orange-500/30 hover:shadow-lg hover:-translate-y-1">
                       {/* Noise Overlay */}
-                      <div
-                        className="absolute inset-0 opacity-20 rounded-2xl pointer-events-none"
-                        style={{
-                          backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-                          backgroundSize: '300px 300px',
-                          mixBlendMode: 'multiply'
-                        }}
-                      />
+                      {/* Noise Overlay Removed */}
 
                       <div className="relative">
                         {/* Icon */}
@@ -238,21 +227,11 @@ const Services = () => {
       {/* Services Grid with Elegant Background */}
       <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden font-serif">
         {/* Noisy Background */}
-        <div className="absolute inset-0 bg-[#F9F9F9]">
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}
-          />
+        <div className="absolute inset-0 bg-white">
         </div>
 
         {/* Subtle Gradient Overlay */}
-        <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-0 transition-all duration-500 hover:bg-white/80 hover:border-orange-500/30 hover:shadow-lg hover:-translate-y-1 " />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -270,7 +249,7 @@ const Services = () => {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -286,6 +265,7 @@ const Services = () => {
                   ctaHref={service.ctaHref}
                   imageUrl={service.imageUrl}
                   gradient={service.gradient}
+                  icon={service.icon}
                 />
               </motion.div>
             ))}

@@ -67,17 +67,7 @@ const Certifications = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Universal Noisy Background */}
-      <div className="fixed inset-0 bg-[#F9F9F9] -z-10">
-        <div
-          className="absolute inset-0 opacity-40"
-          style={{
-            backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-            backgroundSize: '300px 300px',
-            mixBlendMode: 'multiply'
-          }}
-        />
-      </div>
+      <div className="fixed inset-0 bg-white -z-10"></div>
 
       <Header />
 
@@ -134,14 +124,7 @@ const Certifications = () => {
                   >
                     <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:bg-white/80 hover:border-orange-500/30 hover:shadow-lg hover:-translate-y-1">
                       {/* Noise Overlay */}
-                      <div
-                        className="absolute inset-0 opacity-20 rounded-2xl pointer-events-none"
-                        style={{
-                          backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-                          backgroundSize: '300px 300px',
-                          mixBlendMode: 'multiply'
-                        }}
-                      />
+
 
                       <div className="relative">
                         <div className="flex items-center justify-center mb-3">
@@ -241,15 +224,7 @@ const Certifications = () => {
             className="mt-16"
           >
             <div className="relative bg-white/60 backdrop-blur-sm border border-gray-200/50 p-12 rounded-2xl text-center">
-              {/* Noise Overlay */}
-              <div
-                className="absolute inset-0 opacity-20 rounded-2xl pointer-events-none"
-                style={{
-                  backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-                  backgroundSize: '300px 300px',
-                  mixBlendMode: 'multiply'
-                }}
-              />
+
 
               <div className="relative">
                 <h3 className="text-3xl md:text-4xl font-serif font-normal text-gray-900 mb-4">

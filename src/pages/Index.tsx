@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProgramModal from '../components/ProgramModal';
+import HeroSlider from '../components/HeroSlider';
 import DatabaseWithRestApi from '../components/ui/database-with-rest-api';
 import { AppleActivityCard } from '../components/ui/apple-activity-ring';
 import { Users, Clock, CheckCircle, Heart, Activity, Award, Star, BookOpen, Monitor, Zap, Target, User, Calendar, TrendingUp, Brain, Shield, Play, ArrowRight, Sparkles } from 'lucide-react';
@@ -78,66 +79,46 @@ const Index = () => {
   return <div className="min-h-screen bg-background">
     <Header />
 
-    {/* Hero Section */}
-    {/* Hero Section */}
-    <section className="relative min-h-screen overflow-hidden bg-black flex items-center font-serif">
-      {/* Background Gradient - Stronger Orange on Right */}
-      {/* Background Gradient - Deep Black to Bright Orange with Purple Hints */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#100b14] to-orange-500 opacity-90"></div>
-
-      {/* Additional Glow for depth */}
-      <div className="absolute top-[-20%] right-[-20%] w-[70%] h-[90%] bg-orange-500/30 rounded-full blur-[150px] pointer-events-none"></div>
-
-      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
+    {/* Hero Section with Image Slider */}
+    <HeroSlider
+      slides={[
+        { image: '/1.jpg', alt: 'Fitness Training at MZ Fitness Hub' },
+        { image: '2.jpg', alt: 'State of the Art Gym Equipment' },
+        { image: '/3.jpg', alt: 'Personal Training Sessions' },
+      ]}
+      autoPlayInterval={5000}
+    >
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-20 w-full">
+        <div className="max-w-3xl">
           {/* Left Content */}
-          <div className="text-white space-y-8 z-10 max-w-2xl">
+          <div className="text-white space-y-8">
             <div className="space-y-6">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-medium tracking-tight leading-tight">
                 Your Ultimate <br />
                 Fitness Pulse
               </h1>
 
-              <p className="text-xl text-gray-300 leading-relaxed max-w-lg font-light">
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-lg font-light">
                 AI-guided coaching and live feedback that adapts to your training. Every heartbeat, stride, and lift fuels smarter progress.
               </p>
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-white text-black px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button className="bg-orange-500 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Start Free Trial
               </button>
-            </div>
-          </div>
-
-          {/* Right Visual Element - Tablet (Reduced Size & Minimalistic) */}
-          <div className="relative flex justify-center lg:justify-end z-10 mt-10 lg:mt-0">
-            <div className="relative w-[300px] h-[420px] md:w-[380px] md:h-[540px] rounded-[2.5rem] shadow-2xl overflow-hidden ring-1 ring-white/10 transition-all duration-500">
-              {/* Tablet Screen */}
-              <div className="absolute inset-0 bg-orange-500 overflow-hidden">
-                <img src="/heroimg.png" alt="Fitness App Interface" className="w-full h-full object-cover" />
-                {/* Subtle Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-              </div>
-
-              {/* Tablet Reflection */}
-              <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-white/10 via-transparent to-transparent pointer-events-none"></div>
+              <button className="bg-white/10 backdrop-blur-sm text-white px-10 py-4 rounded-full font-semibold text-lg border border-white/30 hover:bg-white/20 transition-all duration-300">
+                Learn More
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </HeroSlider>
 
     {/* Why We're Different Section */}
-    <section className="py-20 bg-[#F9F9F9] relative overflow-hidden font-serif">
-      {/* Noise Texture Overlay */}
-      <div className="absolute inset-0 opacity-40" style={{
-        backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-        backgroundSize: '300px 300px',
-        mixBlendMode: 'multiply'
-      }}></div>
+    <section className="py-20 bg-white relative overflow-hidden font-serif">
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -153,12 +134,7 @@ const Index = () => {
           {/* Card 1 */}
           <div className="group relative overflow-hidden rounded-3xl p-8 border border-gray-200 hover:border-orange-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-2 shadow-md">
             {/* Card Background with Noise */}
-            <div className="absolute inset-0 bg-[#F9F9F9]"></div>
-            <div className="absolute inset-0 opacity-40" style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}></div>
+            <div className="absolute inset-0 bg-white"></div>
 
             <div className="relative z-10">
               <div className="w-20 h-20 rounded-full border-2 border-orange-100 group-hover:border-orange-500 flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] transition-all duration-500 bg-orange-50/50">
@@ -174,12 +150,7 @@ const Index = () => {
           {/* Card 2 */}
           <div className="group relative overflow-hidden rounded-3xl p-8 border border-gray-200 hover:border-orange-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-2 shadow-md">
             {/* Card Background with Noise */}
-            <div className="absolute inset-0 bg-[#F9F9F9]"></div>
-            <div className="absolute inset-0 opacity-40" style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}></div>
+            <div className="absolute inset-0 bg-white"></div>
 
             <div className="relative z-10">
               <div className="w-20 h-20 rounded-full border-2 border-orange-100 group-hover:border-orange-500 flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] transition-all duration-500 bg-orange-50/50">
@@ -195,12 +166,7 @@ const Index = () => {
           {/* Card 3 */}
           <div className="group relative overflow-hidden rounded-3xl p-8 border border-gray-200 hover:border-orange-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-2 shadow-md">
             {/* Card Background with Noise */}
-            <div className="absolute inset-0 bg-[#F9F9F9]"></div>
-            <div className="absolute inset-0 opacity-40" style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}></div>
+            <div className="absolute inset-0 bg-white"></div>
 
             <div className="relative z-10">
               <div className="w-20 h-20 rounded-full border-2 border-orange-100 group-hover:border-orange-500 flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] transition-all duration-500 bg-orange-50/50">
@@ -217,13 +183,7 @@ const Index = () => {
     </section>
 
     {/* Training Categories Section */}
-    <section className="py-20 bg-[#F9F9F9] relative overflow-hidden font-serif">
-      {/* Noise Texture Overlay */}
-      <div className="absolute inset-0 opacity-40" style={{
-        backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-        backgroundSize: '300px 300px',
-        mixBlendMode: 'multiply'
-      }}></div>
+    <section className="py-20 bg-white relative overflow-hidden font-serif">
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -239,12 +199,7 @@ const Index = () => {
           {/* Card 1 - Strength Training */}
           <div className="group relative overflow-hidden rounded-3xl p-8 border border-gray-200 hover:border-orange-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-2 shadow-md">
             {/* Card Background with Noise */}
-            <div className="absolute inset-0 bg-[#F9F9F9]"></div>
-            <div className="absolute inset-0 opacity-40" style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}></div>
+            <div className="absolute inset-0 bg-white"></div>
 
             <div className="relative z-10">
               <div className="w-20 h-20 rounded-full border-2 border-orange-100 group-hover:border-orange-500 flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] transition-all duration-500 bg-orange-50/50">
@@ -270,12 +225,7 @@ const Index = () => {
           {/* Card 2 - Cardio & HIIT */}
           <div className="group relative overflow-hidden rounded-3xl p-8 border border-gray-200 hover:border-orange-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-2 shadow-md">
             {/* Card Background with Noise */}
-            <div className="absolute inset-0 bg-[#F9F9F9]"></div>
-            <div className="absolute inset-0 opacity-40" style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}></div>
+            <div className="absolute inset-0 bg-white"></div>
 
             <div className="relative z-10">
               <div className="w-20 h-20 rounded-full border-2 border-orange-100 group-hover:border-orange-500 flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] transition-all duration-500 bg-orange-50/50">
@@ -301,12 +251,7 @@ const Index = () => {
           {/* Card 3 - Yoga & Flexibility */}
           <div className="group relative overflow-hidden rounded-3xl p-8 border border-gray-200 hover:border-orange-500 transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-2 shadow-md">
             {/* Card Background with Noise */}
-            <div className="absolute inset-0 bg-[#F9F9F9]"></div>
-            <div className="absolute inset-0 opacity-40" style={{
-              backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-              backgroundSize: '300px 300px',
-              mixBlendMode: 'multiply'
-            }}></div>
+            <div className="absolute inset-0 bg-white"></div>
 
             <div className="relative z-10">
               <div className="w-20 h-20 rounded-full border-2 border-orange-100 group-hover:border-orange-500 flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] transition-all duration-500 bg-orange-50/50">
@@ -334,13 +279,7 @@ const Index = () => {
 
 
     {/* Your Fitness Journey Section */}
-    <section className="py-12 bg-[#F9F9F9] relative overflow-hidden font-serif">
-      {/* Noise Texture Overlay */}
-      <div className="absolute inset-0 opacity-40" style={{
-        backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-        backgroundSize: '300px 300px',
-        mixBlendMode: 'multiply'
-      }}></div>
+    <section className="py-12 bg-white relative overflow-hidden font-serif">
 
       {/* Gradient Accents */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
@@ -357,7 +296,7 @@ const Index = () => {
 
         {/* Main Animation Component - Enlarged and Centered */}
         <div className="flex justify-center items-center py-12">
-          
+
           <div className="relative transform scale-110 md:scale-125 lg:scale-150">
             {/* Decorative circles around component */}
             <div className="absolute -top-8 -left-8 w-16 h-16 border-2 border-orange-200/30 rounded-full"></div>
@@ -398,12 +337,7 @@ const Index = () => {
     </section>
 
     {/* Training Benefits Section - Apple Activity Rings */}
-    <section className="py-20 bg-[#F9F9F9] relative overflow-hidden font-serif">
-            <div className="absolute inset-0 opacity-40" style={{
-        backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-        backgroundSize: '300px 300px',
-        mixBlendMode: 'multiply'
-      }}></div>
+    <section className="py-20 bg-white relative overflow-hidden font-serif">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -414,7 +348,7 @@ const Index = () => {
           </p>
         </div>
 
-        <AppleActivityCard title="This Week's Progress" className="bg-[#F9F9F9]" />
+        <AppleActivityCard title="This Week's Progress" className="bg-white" />
       </div>
     </section>
 

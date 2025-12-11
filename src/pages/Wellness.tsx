@@ -18,7 +18,7 @@ const Wellness = () => {
             ctaText: "Discover Treatments",
             ctaHref: "/facial-treatment-in-rajkot",
             imageUrl: "/services/facial-treatment.png",
-            gradient: "green" as const,
+            gradient: "pink" as const,
             icon: Sparkles
         },
         {
@@ -27,7 +27,7 @@ const Wellness = () => {
             ctaText: "Explore Polishing",
             ctaHref: "/polishing-in-rajkot",
             imageUrl: "/services/polishing.png",
-            gradient: "green" as const,
+            gradient: "blue" as const,
             icon: Sun
         },
         {
@@ -45,7 +45,7 @@ const Wellness = () => {
             ctaText: "View Options",
             ctaHref: "/body-shaping-in-rajkot",
             imageUrl: "/services/body-shaping.png",
-            gradient: "green" as const,
+            gradient: "purple" as const,
             icon: Activity
         },
         {
@@ -54,7 +54,7 @@ const Wellness = () => {
             ctaText: "See Treatments",
             ctaHref: "/laser-treatment-in-rajkot",
             imageUrl: "/services/laser-treatment.png",
-            gradient: "green" as const,
+            gradient: "orange" as const,
             icon: Zap
         }
     ];
@@ -66,18 +66,10 @@ const Wellness = () => {
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 overflow-hidden">
                 {/* Noisy Background */}
-                <div className="absolute inset-0 bg-[#F9F9F9]">
-                    <div
-                        className="absolute inset-0 opacity-40"
-                        style={{
-                            backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")',
-                            backgroundSize: '300px 300px',
-                            mixBlendMode: 'multiply'
-                        }}
-                    />
+                <div className="absolute inset-0 bg-white">
                 </div>
 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -99,8 +91,8 @@ const Wellness = () => {
 
             {/* Services Grid */}
             <section className="relative py-16 sm:py-20 bg-white/50 backdrop-blur-sm">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
                         {services.map((service, index) => (
                             <motion.div
                                 key={service.title}
@@ -116,6 +108,7 @@ const Wellness = () => {
                                     ctaHref={service.ctaHref}
                                     imageUrl={service.imageUrl}
                                     gradient={service.gradient}
+                                    icon={service.icon}
                                 />
                             </motion.div>
                         ))}

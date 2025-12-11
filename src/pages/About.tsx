@@ -60,15 +60,7 @@ const About = () => {
     return (
         <div className="min-h-screen relative overflow-hidden">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#f5f5f5]">
-                {/* Hero noise texture overlay */}
-                <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-                        backgroundRepeat: 'repeat',
-                        backgroundSize: '200px 200px'
-                    }}
-                />
+            <section className="relative min-h-screen flex flex-col overflow-hidden bg-white">
 
                 {/* Tiles Background */}
                 <div className="absolute inset-0 z-0">
@@ -167,18 +159,8 @@ const About = () => {
 
             {/* All other sections with noisy grey background */}
             <div className="relative">
-                {/* Light grey background */}
-                <div className="absolute inset-0 bg-[#F9F9F9]"></div>
-
-                {/* Noisy texture overlay */}
-                <div
-                    className="absolute inset-0 opacity-40"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJzIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNzKSIvPjwvc3ZnPg==")`,
-                        backgroundSize: '300px 300px',
-                        mixBlendMode: 'multiply'
-                    }}
-                ></div>
+                {/* White background */}
+                <div className="absolute inset-0 bg-white"></div>
 
                 {/* Content wrapper with relative positioning */}
                 <div className="relative z-10">
