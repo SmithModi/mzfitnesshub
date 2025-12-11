@@ -3,8 +3,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProgramModal from '../components/ProgramModal';
 import HeroSlider from '../components/HeroSlider';
+import StarButton from '../components/ui/StarButton';
 import DatabaseWithRestApi from '../components/ui/database-with-rest-api';
 import { AppleActivityCard } from '../components/ui/apple-activity-ring';
+import Testimonials from '../components/Testimonials';
 import { Users, Clock, CheckCircle, Heart, Activity, Award, Star, BookOpen, Monitor, Zap, Target, User, Calendar, TrendingUp, Brain, Shield, Play, ArrowRight, Sparkles } from 'lucide-react';
 import { useEffect } from 'react';
 const Index = () => {
@@ -15,7 +17,7 @@ const Index = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Transform your fitness journey at MZ Fitness Hub - Rajkot\'s premier gym. Expert personal training, state-of-the-art equipment, nutrition guidance & group fitness classes. Join 500+ satisfied members!');
+      metaDescription.setAttribute('content', 'Transform your fitness journey at MZ Fitnezz Hub - Rajkot\'s premier gym. Expert personal training, state-of-the-art equipment, nutrition guidance & group fitness classes. Join 500+ satisfied members!');
     }
 
     // Add structured data for homepage
@@ -29,7 +31,7 @@ const Index = () => {
       "url": "https://mzfitnezz.in/",
       "mainEntity": {
         "@type": "Gym",
-        "name": "MZ Fitness Hub",
+        "name": "MZ Fitnezz Hub",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "1st Floor, Anant Chaya Complex, Amin Marg",
@@ -82,7 +84,7 @@ const Index = () => {
     {/* Hero Section with Image Slider */}
     <HeroSlider
       slides={[
-        { image: '/1.jpg', alt: 'Fitness Training at MZ Fitness Hub' },
+        { image: '/1.jpg', alt: 'Fitness Training at MZ Fitnezz Hub' },
         { image: '2.jpg', alt: 'State of the Art Gym Equipment' },
         { image: '/3.jpg', alt: 'Personal Training Sessions' },
       ]}
@@ -93,7 +95,7 @@ const Index = () => {
           {/* Left Content */}
           <div className="text-white space-y-8">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-medium tracking-tight leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight leading-tight">
                 Your Ultimate <br />
                 Fitness Pulse
               </h1>
@@ -105,12 +107,7 @@ const Index = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-orange-500 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Start Free Trial
-              </button>
-              <button className="bg-white/10 backdrop-blur-sm text-white px-10 py-4 rounded-full font-semibold text-lg border border-white/30 hover:bg-white/20 transition-all duration-300">
-                Learn More
-              </button>
+              <StarButton />
             </div>
           </div>
         </div>
@@ -118,7 +115,7 @@ const Index = () => {
     </HeroSlider>
 
     {/* Why We're Different Section */}
-    <section className="py-20 bg-white relative overflow-hidden font-serif">
+    <section className="py-20 bg-white relative overflow-hidden">
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -126,7 +123,7 @@ const Index = () => {
             Why We're Different?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            What sets MZ Fitness Hub apart from other gyms in Rajkot
+            What sets MZ Fitnezz Hub apart from other gyms in Rajkot
           </p>
         </div>
 
@@ -183,7 +180,7 @@ const Index = () => {
     </section>
 
     {/* Training Categories Section */}
-    <section className="py-20 bg-white relative overflow-hidden font-serif">
+    <section className="py-20 bg-white relative overflow-hidden">
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -216,7 +213,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-sm text-gray-600">Free weights & machines</span>
+                  <span className="text-sm text-gray-600">Weights & machines</span>
                 </div>
               </div>
             </div>
@@ -351,6 +348,8 @@ const Index = () => {
         <AppleActivityCard title="This Week's Progress" className="bg-white" />
       </div>
     </section>
+
+    <Testimonials />
 
     {/* Program Modal */}
     < ProgramModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} program={selectedProgram} />

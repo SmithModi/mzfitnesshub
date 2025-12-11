@@ -61,13 +61,13 @@ const BMICalculator = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden font-serif">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium text-white mb-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-4">
               BMI Calculator
             </h1>
-            <p className="text-xl text-gray-300 font-serif max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Calculate your Body Mass Index and understand your health status
             </p>
           </div>
@@ -88,7 +88,7 @@ const BMICalculator = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {/* Height Input */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-200 mb-2 font-serif">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Height (cm)
                   </label>
                   <div className="relative">
@@ -97,7 +97,7 @@ const BMICalculator = () => {
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
                       placeholder="Enter height"
-                      className="w-full px-4 py-3.5 pr-12 bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all duration-200 font-serif"
+                      className="w-full px-4 py-3.5 pr-12 bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all duration-200"
                     />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-orange-500">
                       <Ruler className="h-5 w-5" strokeWidth={1.5} />
@@ -107,7 +107,7 @@ const BMICalculator = () => {
 
                 {/* Weight Input */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-200 mb-2 font-serif">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Weight (kg)
                   </label>
                   <div className="relative">
@@ -116,7 +116,7 @@ const BMICalculator = () => {
                       value={weight}
                       onChange={(e) => setWeight(e.target.value)}
                       placeholder="Enter weight"
-                      className="w-full px-4 py-3.5 pr-12 bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all duration-200 font-serif"
+                      className="w-full px-4 py-3.5 pr-12 bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/50 transition-all duration-200"
                     />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-orange-500">
                       <Scale className="h-5 w-5" strokeWidth={1.5} />
@@ -136,15 +136,15 @@ const BMICalculator = () => {
                   <div className="text-center">
                     <div className="flex items-center justify-center mb-4">
                       <Heart className={`h-7 w-7 ${getBMIColor()} mr-2`} strokeWidth={1.5} />
-                      <span className="text-xl font-serif font-normal text-white">Your BMI Result</span>
+                      <span className="text-xl font-normal text-white">Your BMI Result</span>
                     </div>
-                    <div className={`text-6xl font-serif font-normal ${getBMIColor()} mb-3`}>
+                    <div className={`text-6xl font-normal ${getBMIColor()} mb-3`}>
                       {bmi}
                     </div>
-                    <div className={`text-2xl font-serif font-normal ${getBMIColor()} mb-4`}>
+                    <div className={`text-2xl font-normal ${getBMIColor()} mb-4`}>
                       {category}
                     </div>
-                    <p className="text-gray-300 font-serif leading-relaxed max-w-md mx-auto">
+                    <p className="text-gray-300 leading-relaxed max-w-md mx-auto">
                       {bmi < 18.5 && "You may be underweight. Consider consulting with a healthcare provider."}
                       {bmi >= 18.5 && bmi < 25 && "You have a healthy weight! Keep up with balanced diet and exercise."}
                       {bmi >= 25 && bmi < 30 && "You may be overweight. Consider adopting healthier lifestyle habits."}
@@ -156,22 +156,22 @@ const BMICalculator = () => {
 
               {/* BMI Scale Reference */}
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <h3 className="text-lg font-serif font-normal text-white mb-4 text-center">BMI Categories</h3>
+                <h3 className="text-lg font-normal text-white mb-4 text-center">BMI Categories</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg border border-blue-500/20">
-                    <span className="font-medium text-blue-300 font-serif">Underweight</span>
+                    <span className="font-medium text-blue-300">Underweight</span>
                     <span className="text-blue-400 font-semibold">&lt; 18.5</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-green-900/30 rounded-lg border border-green-500/20">
-                    <span className="font-medium text-green-300 font-serif">Normal</span>
+                    <span className="font-medium text-green-300">Normal</span>
                     <span className="text-green-400 font-semibold">18.5 - 24.9</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-yellow-900/30 rounded-lg border border-yellow-500/20">
-                    <span className="font-medium text-yellow-300 font-serif">Overweight</span>
+                    <span className="font-medium text-yellow-300">Overweight</span>
                     <span className="text-yellow-400 font-semibold">25.0 - 29.9</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-red-900/30 rounded-lg border border-red-500/20">
-                    <span className="font-medium text-red-300 font-serif">Obese</span>
+                    <span className="font-medium text-red-300">Obese</span>
                     <span className="text-red-400 font-semibold">≥ 30.0</span>
                   </div>
                 </div>
@@ -192,10 +192,10 @@ const BMICalculator = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-normal text-white mb-4">
               Health <span className="text-orange-500">Tips</span>
             </h2>
-            <p className="text-lg text-gray-300 font-serif max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Actionable advice for better health and wellness
             </p>
           </motion.div>
@@ -233,10 +233,10 @@ const BMICalculator = () => {
                       <div className="inline-flex items-center justify-center p-4 rounded-xl bg-orange-500/20 group-hover:bg-orange-500/30 transition-colors duration-300 mb-5">
                         <IconComponent className="h-8 w-8 text-orange-500" strokeWidth={1.5} />
                       </div>
-                      <h3 className="text-2xl font-serif font-normal text-white mb-3">
+                      <h3 className="text-2xl font-normal text-white mb-3">
                         {tip.title}
                       </h3>
-                      <p className="text-gray-300 font-serif leading-relaxed">
+                      <p className="text-gray-300 leading-relaxed">
                         {tip.description}
                       </p>
                     </div>

@@ -74,7 +74,7 @@ function Footer() {
             <div className="flex items-center space-x-2">
               <img
                 src="/lovable-uploads/213e706b-4577-4749-9a80-8fa51a197e3f.png"
-                alt="MZ Fitness Hub Logo"
+                alt="MZ Fitnezz Hub Logo"
                 className="h-32  w-32 rounded-full"
               />
             </div>
@@ -149,7 +149,7 @@ function Footer() {
 
           {/* Copyright */}
           <div className="text-center md:text-right text-zinc-600">
-            <p>&copy; {new Date().getFullYear()} MZ Fitness Hub. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} MZ Fitnezz Hub. All rights reserved.</p>
             <p className="text-xs mt-1">
               Made with 💗 by{' '}
               <a

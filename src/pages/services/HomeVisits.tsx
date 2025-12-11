@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const HomeVisits = () => {
     useEffect(() => {
-        document.title = "Home Visits Physiotherapy in Rajkot | MZ Fitness Hub";
+        document.title = "Home Visits Physiotherapy in Rajkot | MZ Fitnezz Hub";
         window.scrollTo(0, 0);
     }, []);
 
@@ -21,7 +21,7 @@ const HomeVisits = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white font-serif relative">
+        <div className="min-h-screen bg-white relative">
 
             <div className="relative z-10">
                 <Header />

@@ -6,9 +6,9 @@ const GlobalPopups = () => {
   const [showReviewPopup, setShowReviewPopup] = useState(false);
 
   const handleWhatsAppClick = () => {
-    // Updated WhatsApp number for MZ Fitness Hub
+    // Updated WhatsApp number for MZ Fitnezz Hub
     const phoneNumber = "+919909303109";
-    const message = "Hi! I'm interested in MZ Fitness Hub membership. Can you provide more details?";
+    const message = "Hi! I'm interested in MZ Fitnezz Hub membership. Can you provide more details?";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -75,7 +75,7 @@ const GlobalPopups = () => {
               </div>
 
               <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                At MZ Fitness Hub, our expert team provides premium fitness training and wellness services. We pride ourselves on quality coaching and member satisfaction. Share your experience with us!
+                At MZ Fitnezz Hub, our expert team provides premium fitness training and wellness services. We pride ourselves on quality coaching and member satisfaction. Share your experience with us!
               </p>
 
               {/* Action Button */}

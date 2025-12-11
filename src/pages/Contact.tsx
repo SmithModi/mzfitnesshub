@@ -5,11 +5,11 @@ import { MapPin, Clock, Phone, Users, Heart, Award } from 'lucide-react';
 
 const Contact = () => {
   useEffect(() => {
-    document.title = "Contact MZ Fitness Hub - Best Gym in Rajkot | Location & Membership Inquiry";
+    document.title = "Contact MZ Fitnezz Hub - Best Gym in Rajkot | Location & Membership Inquiry";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Contact MZ Fitness Hub Rajkot for gym membership, personal training, and fitness programs. Located at Anant Chaya Complex, Amin Marg. Call +91-99093-03109 for best fitness center in Gujarat.');
+      metaDescription.setAttribute('content', 'Contact MZ Fitnezz Hub Rajkot for gym membership, personal training, and fitness programs. Located at Anant Chaya Complex, Amin Marg. Call +91-99093-03109 for best fitness center in Gujarat.');
     }
 
     const script = document.createElement('script');
@@ -17,12 +17,12 @@ const Contact = () => {
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contact MZ Fitness Hub",
+      "name": "Contact MZ Fitnezz Hub",
       "description": "Get in touch with Rajkot's premier fitness center for membership inquiries and fitness consultations",
       "url": "https://mzfitnezz.in/contact",
       "mainEntity": {
         "@type": "Gym",
-        "name": "MZ Fitness Hub",
+        "name": "MZ Fitnezz Hub",
         "telephone": "+91-99093-03109",
         "address": {
           "@type": "PostalAddress",
@@ -61,7 +61,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const whatsappMessage = `Hi MZ Fitness Hub! I'm interested in your services.
+    const whatsappMessage = `Hi MZ Fitnezz Hub! I'm interested in your services.
 
 *Name:* ${formData.name}
 *Email:* ${formData.email}
@@ -88,7 +88,7 @@ Please get back to me with more details. Thank you!`;
   };
 
   return (
-    <div className="min-h-screen bg-background font-serif">
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
@@ -100,7 +100,7 @@ Please get back to me with more details. Thank you!`;
               Get In <span className="text-orange-500">Touch</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-gray-600">
-              Ready to transform your life at MZ Fitness Hub? We're here to guide you every step of your fitness journey in Rajkot.
+              Ready to transform your life at MZ Fitnezz Hub? We're here to guide you every step of your fitness journey in Rajkot.
             </p>
           </div>
         </div>
@@ -113,9 +113,9 @@ Please get back to me with more details. Thank you!`;
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Visit MZ Fitness Hub</h2>
+              <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Visit MZ Fitnezz Hub</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Located in the heart of Rajkot, Gujarat, MZ Fitness Hub is your premier destination for fitness transformation.
+                Located in the heart of Rajkot, Gujarat, MZ Fitnezz Hub is your premier destination for fitness transformation.
               </p>
 
               <div className="space-y-6">
@@ -244,12 +244,12 @@ Please get back to me with more details. Thank you!`;
         </div>
       </section>
 
-      {/* Why Choose MZ Fitness Hub */}
+      {/* Why Choose MZ Fitnezz Hub */}
       <section className="relative py-20 bg-white overflow-hidden">
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4">Why Choose MZ Fitness Hub?</h2>
+            <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4">Why Choose MZ Fitnezz Hub?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Experience the difference at Rajkot's premier fitness destination
             </p>
@@ -259,7 +259,7 @@ Please get back to me with more details. Thank you!`;
             {[
               { icon: Users, title: 'Expert Guidance', desc: 'Our certified trainers provide personalized attention to help you achieve your fitness goals safely and effectively.', bg: 'bg-orange-100', color: 'text-primary' },
               { icon: Heart, title: 'Health First', desc: 'We prioritize your overall wellness with comprehensive health assessments and holistic fitness approaches.', bg: 'bg-green-100', color: 'text-green-600' },
-              { icon: Award, title: 'Proven Results', desc: 'Join hundreds of satisfied members who have transformed their lives at MZ Fitness Hub in Rajkot.', bg: 'bg-purple-100', color: 'text-purple-600' }
+              { icon: Award, title: 'Proven Results', desc: 'Join hundreds of satisfied members who have transformed their lives at MZ Fitnezz Hub in Rajkot.', bg: 'bg-purple-100', color: 'text-purple-600' }
             ].map((item) => {
               const IconComponent = item.icon;
               return (

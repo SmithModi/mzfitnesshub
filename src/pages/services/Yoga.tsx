@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Yoga = () => {
     useEffect(() => {
-        document.title = "Yoga in Rajkot | MZ Fitness Hub";
+        document.title = "Yoga in Rajkot | MZ Fitnezz Hub";
         window.scrollTo(0, 0);
     }, []);
 
@@ -21,7 +21,7 @@ const Yoga = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white font-serif relative">
+        <div className="min-h-screen bg-white relative">
 
             <div className="relative z-10">
                 <Header />

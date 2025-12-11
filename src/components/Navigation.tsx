@@ -49,7 +49,7 @@ const Navigation = () => {
   }];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 font-serif ${isTransparentBg
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isTransparentBg
       ? 'bg-transparent py-4'
       : isBMIScrolled
         ? 'bg-white/100 backdrop-blur-md shadow-sm py-2'
@@ -60,7 +60,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0 z-50">
             <Link to="/" className="flex items-center space-x-3 group">
-              <img src="/lovable-uploads/213e706b-4577-4749-9a80-8fa51a197e3f.png" alt="MZ Fitness Hub Logo" className="h-20 w-20 rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 mt-4" />
+              <img src="/lovable-uploads/213e706b-4577-4749-9a80-8fa51a197e3f.png" alt="MZ Fitnezz Hub Logo" className="h-20 w-20 rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 mt-4" />
             </Link>
           </div>
 
@@ -70,7 +70,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative px-3 py-2 text-base font-medium transition-all duration-200 ${useWhiteText
+                className={`relative px-3 py-2 text-base font-medium transition-all duration-200 whitespace-nowrap ${useWhiteText
                   ? 'text-white/90 hover:text-white'
                   : location.pathname === item.path
                     ? 'text-primary'
@@ -107,7 +107,7 @@ const Navigation = () => {
                 ? 'bg-white text-black hover:bg-gray-100'
                 : 'bg-primary text-white hover:bg-orange-600 shadow-md hover:shadow-lg'
                 }`}>
-                Free Demo
+                Join Now
               </Link>
             </div>
 

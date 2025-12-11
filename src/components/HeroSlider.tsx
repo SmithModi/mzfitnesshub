@@ -62,7 +62,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
     };
 
     return (
-        <section className="relative min-h-screen overflow-hidden bg-black flex items-center font-serif">
+        <section className="relative min-h-screen overflow-hidden bg-black flex items-center">
             {/* Background Image Slider */}
             <div className="absolute inset-0">
                 <AnimatePresence initial={false} custom={direction} mode="popLayout">

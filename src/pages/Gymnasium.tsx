@@ -8,14 +8,14 @@ import { GradientCard } from '../components/ui/gradient-card';
 
 const Gymnasium = () => {
     useEffect(() => {
-        document.title = "Gymnasium in Rajkot | MZ Fitness Hub";
+        document.title = "Gymnasium in Rajkot | MZ Fitnezz Hub";
         window.scrollTo(0, 0);
     }, []);
 
     const services = [
         {
             title: "Strength Training",
-            description: "Build muscle and increase power with our state-of-the-art free weights and resistance machines.",
+            description: "Build muscle and increase power with our state-of-the-art weights and resistance machines.",
             ctaText: "Explore Strength",
             ctaHref: "/strength-training-in-rajkot",
             imageUrl: "/services/strength.png", // Placeholder, will use generic if not found
@@ -52,7 +52,7 @@ const Gymnasium = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-background font-serif">
+        <div className="min-h-screen bg-background">
             <Header />
 
             {/* Hero Section */}

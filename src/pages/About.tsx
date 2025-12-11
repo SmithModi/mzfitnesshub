@@ -90,7 +90,7 @@ const About = () => {
                         >
                             {/* Main Heading */}
                             <motion.h1
-                                className="font-['Instrument_Serif'] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-zinc-900 leading-[1.1]"
+                                className="font-funnel text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-zinc-900 leading-[1.1]"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -140,15 +140,15 @@ const About = () => {
                                 transition={{ duration: 0.8, delay: 1 }}
                             >
                                 <div className="text-center">
-                                    <div className="font-['Instrument_Serif'] text-4xl font-bold text-zinc-900 mb-2">500+</div>
+                                    <div className="font-funnel text-4xl font-bold text-zinc-900 mb-2">500+</div>
                                     <div className="text-zinc-600 text-sm">Members</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="font-['Instrument_Serif'] text-4xl font-bold text-zinc-900 mb-2">95%</div>
+                                    <div className="font-funnel text-4xl font-bold text-zinc-900 mb-2">95%</div>
                                     <div className="text-zinc-600 text-sm">Success Rate</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="font-['Instrument_Serif'] text-4xl font-bold text-zinc-900 mb-2">4.9</div>
+                                    <div className="font-funnel text-4xl font-bold text-zinc-900 mb-2">4.9</div>
                                     <div className="text-zinc-600 text-sm">Rating</div>
                                 </div>
                             </motion.div>
@@ -211,7 +211,7 @@ const About = () => {
                                         <div className="inline-block px-4 py-1.5 rounded-full bg-[#FF9F1C]/10 text-[#FF9F1C] text-xs font-medium tracking-wider uppercase mb-6">
                                             Meet the Founder
                                         </div>
-                                        <h2 className="font-['Instrument_Serif'] text-4xl md:text-5xl font-bold text-zinc-900 mb-6 leading-tight">
+                                        <h2 className="font-funnel text-4xl md:text-5xl font-bold text-zinc-900 mb-6 leading-tight">
                                             Driven by passion,
                                             <br />
                                             <span className="text-[#FF9F1C]">Built for excellence</span>
@@ -234,7 +234,7 @@ const About = () => {
                                         <div className="flex items-center space-x-4">
                                             <div className="h-px flex-1 bg-gradient-to-r from-[#FF9F1C] to-transparent"></div>
                                             <div className="text-right">
-                                                <p className="font-['Instrument_Serif'] text-xl font-bold text-zinc-900">Mulraj Sinh Zala</p>
+                                                <p className="font-funnel text-xl font-bold text-zinc-900">Mulraj Sinh Zala</p>
                                                 <p className="text-sm text-zinc-500">Founder & Head Trainer</p>
                                             </div>
                                         </div>
@@ -258,7 +258,7 @@ const About = () => {
                                 <div className="inline-block px-4 py-1.5 rounded-full bg-[#FF9F1C]/10 text-[#FF9F1C] text-xs font-medium tracking-wider uppercase mb-6">
                                     Our Journey
                                 </div>
-                                <h2 className="font-['Instrument_Serif'] text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
+                                <h2 className="font-funnel text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
                                     Milestones that define us
                                 </h2>
                                 <p className="text-zinc-500 text-lg leading-relaxed max-w-xl mx-auto">
@@ -287,7 +287,7 @@ const About = () => {
 
                                         <div className="col-start-1 md:col-start-1 md:col-end-6 md:text-right pl-8 md:pl-0 md:pr-12">
                                             <span className="text-sm font-medium text-[#FF9F1C] mb-2 block">2020</span>
-                                            <h3 className="font-['Instrument_Serif'] text-2xl font-bold text-zinc-900 mb-3">Foundation</h3>
+                                            <h3 className="font-funnel text-2xl font-bold text-zinc-900 mb-3">Foundation</h3>
                                             <p className="text-zinc-500 leading-relaxed text-sm">
                                                 MZ Fitnezz was born at Anant Chaya Complex with a vision to bring world-class fitness to Rajkot. We started with just the essentials and a lot of heart.
                                             </p>
@@ -309,7 +309,7 @@ const About = () => {
 
                                         <div className="col-start-1 md:col-start-7 md:col-end-13 pl-8 md:pl-12">
                                             <span className="text-sm font-medium text-[#FF9F1C] mb-2 block">2021</span>
-                                            <h3 className="font-['Instrument_Serif'] text-2xl font-bold text-zinc-900 mb-3">Growing Stronger</h3>
+                                            <h3 className="font-funnel text-2xl font-bold text-zinc-900 mb-3">Growing Stronger</h3>
                                             <p className="text-zinc-500 leading-relaxed text-sm">
                                                 Despite challenges, our community grew to 100+ dedicated members. We expanded our equipment range and introduced personalized training programs.
                                             </p>
@@ -331,7 +331,7 @@ const About = () => {
 
                                         <div className="col-start-1 md:col-start-1 md:col-end-6 md:text-right pl-8 md:pl-0 md:pr-12">
                                             <span className="text-sm font-medium text-[#FF9F1C] mb-2 block">2022</span>
-                                            <h3 className="font-['Instrument_Serif'] text-2xl font-bold text-zinc-900 mb-3">Excellence Recognized</h3>
+                                            <h3 className="font-funnel text-2xl font-bold text-zinc-900 mb-3">Excellence Recognized</h3>
                                             <p className="text-zinc-500 leading-relaxed text-sm">
                                                 We refined our training methodologies and upgraded our facility. Our commitment to member results started turning heads across the city.
                                             </p>
@@ -353,7 +353,7 @@ const About = () => {
 
                                         <div className="col-start-1 md:col-start-7 md:col-end-13 pl-8 md:pl-12">
                                             <span className="text-sm font-medium text-[#FF9F1C] mb-2 block">Present Day</span>
-                                            <h3 className="font-['Instrument_Serif'] text-2xl font-bold text-zinc-900 mb-3">A Fitness Family</h3>
+                                            <h3 className="font-funnel text-2xl font-bold text-zinc-900 mb-3">A Fitness Family</h3>
                                             <p className="text-zinc-500 leading-relaxed text-sm">
                                                 Now a family of 500+ members with a 95% success rate. We continue to innovate and inspire, proving that transformation is possible for everyone.
                                             </p>
@@ -369,9 +369,12 @@ const About = () => {
                         <div className="max-w-7xl mx-auto">
                             <motion.div
                                 className="text-center mb-16"
-                                {...fadeInUp}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
                             >
-                                <h2 className="font-['Instrument_Serif'] text-4xl md:text-5xl font-bold text-zinc-900 mb-4">
+                                <h2 className="font-funnel text-4xl md:text-5xl font-bold text-zinc-900 mb-4">
                                     What We Stand For
                                 </h2>
                                 <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
@@ -379,12 +382,14 @@ const About = () => {
                                 </p>
                             </motion.div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {[
                                     {
                                         title: "Excellence",
                                         subtitle: "Pursuing greatness in everything",
                                         description: "We maintain the highest standards in equipment, training methods, and member experience to ensure outstanding results.",
+                                        icon: Award,
+                                        featureIcon: CheckCircle,
                                         features: [
                                             "Premium Equipment",
                                             "Certified Trainers",
@@ -396,6 +401,8 @@ const About = () => {
                                         title: "Integrity",
                                         subtitle: "Honest guidance, real results",
                                         description: "We provide transparent advice and realistic expectations, building trust through honesty and authentic relationships.",
+                                        icon: Shield,
+                                        featureIcon: CheckCircle,
                                         features: [
                                             "Honest Feedback",
                                             "No False Promises",
@@ -407,6 +414,8 @@ const About = () => {
                                         title: "Community",
                                         subtitle: "Together we grow stronger",
                                         description: "We foster a supportive environment where members motivate each other and celebrate collective achievements.",
+                                        icon: Users,
+                                        featureIcon: Heart,
                                         features: [
                                             "Supportive Environment",
                                             "Member Events",
@@ -421,6 +430,7 @@ const About = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: index * 0.15 }}
+                                        className="flex justify-center w-full"
                                     >
                                         <CardFlip
                                             title={card.title}
@@ -428,6 +438,8 @@ const About = () => {
                                             description={card.description}
                                             features={card.features}
                                             color="#FF9F1C"
+                                            icon={card.icon}
+                                            featureIcon={card.featureIcon}
                                         />
                                     </motion.div>
                                 ))}
@@ -442,7 +454,7 @@ const About = () => {
                                 className="text-center mb-16"
                                 {...fadeInUp}
                             >
-                                <h2 className="font-['Instrument_Serif'] text-4xl md:text-5xl font-bold text-zinc-900 mb-4">What Makes Us Different</h2>
+                                <h2 className="font-funnel text-4xl md:text-5xl font-bold text-zinc-900 mb-4">What Makes Us Different</h2>
                                 <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
                                     Discover why MZ Fitnezz is Rajkot's preferred choice for fitness transformation
                                 </p>
@@ -473,7 +485,7 @@ const About = () => {
                                                 <feature.icon className="h-6 w-6" style={{ color: feature.color }} />
                                             </div>
                                             <div>
-                                                <h3 className="font-['Instrument_Serif'] text-xl font-bold text-zinc-900 mb-2">{feature.title}</h3>
+                                                <h3 className="font-funnel text-xl font-bold text-zinc-900 mb-2">{feature.title}</h3>
                                                 <p className="text-zinc-600 text-sm leading-relaxed">{feature.desc}</p>
                                             </div>
                                         </motion.div>
@@ -488,7 +500,7 @@ const About = () => {
                                     <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FF9F1C]/10 rounded-2xl mb-6">
                                         <Dumbbell className="h-7 w-7 text-[#FF9F1C]" />
                                     </div>
-                                    <h3 className="font-['Instrument_Serif'] text-2xl font-bold text-zinc-900 mb-6">Our Commitment to You</h3>
+                                    <h3 className="font-funnel text-2xl font-bold text-zinc-900 mb-6">Our Commitment to You</h3>
                                     <ul className="space-y-4">
                                         {[
                                             "Clean, well-maintained equipment and facilities",
@@ -523,7 +535,7 @@ const About = () => {
                                 className="text-center mb-16"
                                 {...fadeInUp}
                             >
-                                <h2 className="font-['Instrument_Serif'] text-4xl md:text-5xl font-bold text-zinc-900 mb-4">Our Training Philosophy</h2>
+                                <h2 className="font-funnel text-4xl md:text-5xl font-bold text-zinc-900 mb-4">Our Training Philosophy</h2>
                                 <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
                                     At MZ Fitnezz, we believe in sustainable, science-based approaches to fitness
                                 </p>
@@ -553,7 +565,7 @@ const About = () => {
                                         >
                                             <philosophy.icon className="h-8 w-8" style={{ color: philosophy.color }} />
                                         </div>
-                                        <h3 className="font-['Instrument_Serif'] text-xl font-bold text-zinc-900 mb-3">{philosophy.title}</h3>
+                                        <h3 className="font-funnel text-xl font-bold text-zinc-900 mb-3">{philosophy.title}</h3>
                                         <p className="text-zinc-600 text-sm leading-relaxed">{philosophy.desc}</p>
                                     </motion.div>
                                 ))}

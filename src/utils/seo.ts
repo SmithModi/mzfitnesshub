@@ -1,7 +1,7 @@
-// SEO utility functions for MZ Fitness Hub
+// SEO utility functions for MZ Fitnezz Hub
 
 export const updatePageTitle = (title: string) => {
-  document.title = title.includes('MZ Fitness Hub') ? title : `${title} | MZ Fitness Hub - Best Gym in Rajkot`;
+  document.title = title.includes('MZ Fitnezz Hub') ? title : `${title} | MZ Fitnezz Hub - Best Gym in Rajkot`;
 };
 
 export const updateMetaDescription = (description: string) => {
@@ -25,11 +25,11 @@ export const removeStructuredData = (script: HTMLScriptElement) => {
   }
 };
 
-// Common schema data for MZ Fitness Hub
+// Common schema data for MZ Fitnezz Hub
 export const getGymSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Gym",
-  "name": "MZ Fitness Hub",
+  "name": "MZ Fitnezz Hub",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "1st Floor, Anant Chaya Complex, Amin Marg, above US Catalog",
@@ -54,10 +54,10 @@ export const getGymSchema = () => ({
 
 // SEO keywords for different pages
 export const SEO_KEYWORDS = {
-  homepage: "gym in rajkot, fitness center rajkot, best gym rajkot, MZ Fitness Hub, personal training rajkot, weight loss rajkot, strength training rajkot, group fitness classes rajkot, nutrition coaching rajkot, gujarat gym",
-  about: "about MZ Fitness Hub, rajkot gym story, fitness center history, gym mission rajkot, best gym gujarat, fitness transformation rajkot",
+  homepage: "gym in rajkot, fitness center rajkot, best gym rajkot, MZ Fitnezz Hub, personal training rajkot, weight loss rajkot, strength training rajkot, group fitness classes rajkot, nutrition coaching rajkot, gujarat gym",
+  about: "about MZ Fitnezz Hub, rajkot gym story, fitness center history, gym mission rajkot, best gym gujarat, fitness transformation rajkot",
   training: "personal training rajkot, fitness programs rajkot, strength training, cardio workouts, yoga classes rajkot, group fitness, training programs gujarat",
-  contact: "contact gym rajkot, MZ Fitness Hub location, gym membership inquiry rajkot, fitness center address rajkot, gym phone number gujarat",
+  contact: "contact gym rajkot, MZ Fitnezz Hub location, gym membership inquiry rajkot, fitness center address rajkot, gym phone number gujarat",
   services: "gym services rajkot, fitness services, personal training services, nutrition coaching, fitness consultation rajkot",
   health: "health fitness rajkot, nutrition guidance, wellness programs, diet planning rajkot, health transformation gujarat"
 };

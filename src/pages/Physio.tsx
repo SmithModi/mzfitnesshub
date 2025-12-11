@@ -7,14 +7,14 @@ import { GradientCard } from '../components/ui/gradient-card';
 
 const Physio = () => {
     useEffect(() => {
-        document.title = "Physiotherapy Services in Rajkot | MZ Fitness Hub";
+        document.title = "Physiotherapy Services in Rajkot | MZ Fitnezz Hub";
         window.scrollTo(0, 0);
     }, []);
 
     const services = [
         {
             title: "Pain Management",
-            description: "Advanced pain relief techniques and therapeutic interventions to help you live pain-free.",
+            description: "Advanced pain relief techniques and therapeutic interventions to help you live without pain.",
             ctaText: "Learn More",
             ctaHref: "/pain-management-in-rajkot",
             imageUrl: "/services/pain-management-3d.png",
@@ -51,7 +51,7 @@ const Physio = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-background font-serif">
+        <div className="min-h-screen bg-background">
             <Header />
 
             {/* Hero Section */}

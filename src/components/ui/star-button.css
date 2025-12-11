@@ -1,0 +1,139 @@
+/* Star Button Styles */
+.star-button {
+    position: relative;
+    padding: 12px 35px;
+    background: #ef7f1a;
+    font-size: 17px;
+    font-weight: 500;
+    color: #181818;
+    border: 3px solid #ef7f1a;
+    border-radius: 28px;
+    box-shadow: 0 0 0 #ef7f1a8c;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: visible;
+    /* Ensure stars can fly out */
+}
+
+.star-button svg {
+    display: block;
+    /* Fix any potential inline-block spacing issues */
+}
+
+/* Star Common Styles */
+.star-button .star-1,
+.star-button .star-2,
+.star-button .star-3,
+.star-button .star-4,
+.star-button .star-5,
+.star-button .star-6 {
+    position: absolute;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    pointer-events: none;
+    /* Ensure they don't block clicks */
+}
+
+/* Individual Star Initial Positions & Transitions */
+.star-button .star-1 {
+    top: 20%;
+    left: 20%;
+    width: 25px;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-button .star-2 {
+    top: 45%;
+    left: 45%;
+    width: 15px;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-button .star-3 {
+    top: 40%;
+    left: 40%;
+    width: 5px;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-button .star-4 {
+    top: 20%;
+    left: 40%;
+    width: 8px;
+    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-button .star-5 {
+    top: 25%;
+    left: 45%;
+    width: 15px;
+    transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-button .star-6 {
+    top: 5%;
+    left: 50%;
+    width: 5px;
+    transition: all 0.8s ease;
+}
+
+/* Hover State - Button */
+.star-button:hover {
+    background: transparent;
+    color: #ef7f1a;
+    box-shadow: 0 0 25px #ef7f1a8c;
+}
+
+/* Hover State - Stars (Fly out) */
+.star-button:hover .star-1 {
+    top: -80%;
+    left: -30%;
+    width: 25px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+.star-button:hover .star-2 {
+    top: -25%;
+    left: 10%;
+    width: 15px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+.star-button:hover .star-3 {
+    top: 55%;
+    left: 25%;
+    width: 5px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+.star-button:hover .star-4 {
+    top: 30%;
+    left: 80%;
+    width: 8px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+.star-button:hover .star-5 {
+    top: 25%;
+    left: 115%;
+    width: 15px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+.star-button:hover .star-6 {
+    top: 5%;
+    left: 60%;
+    width: 5px;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+.fil0 {
+    fill: #fffdef;
+}

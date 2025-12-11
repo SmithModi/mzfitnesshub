@@ -19,7 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				sans: ['"Public Sans"', 'sans-serif'],
 				serif: ['"Instrument Serif"', 'serif'],
+				funnel: ['"Funnel Sans"', 'sans-serif'],
+				public: ['"Public Sans"', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

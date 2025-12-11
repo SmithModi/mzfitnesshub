@@ -72,7 +72,7 @@ const Certifications = () => {
       <Header />
 
       {/* Elegant Hero Section */}
-      <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 overflow-hidden font-serif">
+      <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 overflow-hidden">
         {/* Subtle Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/5 to-transparent" />
 
@@ -84,7 +84,7 @@ const Certifications = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-normal text-gray-900 mb-6 tracking-tight leading-[1.1]"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-gray-900 mb-6 tracking-tight leading-[1.1]"
             >
               Professional
               <br />
@@ -96,7 +96,7 @@ const Certifications = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-14 font-serif"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-14"
             >
               Expertise across fitness training, martial arts, and innovation, backed by professional qualifications and world-class achievements.
             </motion.p>
@@ -132,7 +132,7 @@ const Certifications = () => {
                             <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-orange-500" strokeWidth={1.5} />
                           </div>
                         </div>
-                        <div className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-1.5">
+                        <div className="text-3xl md:text-4xl lg:text-5xl font-normal text-gray-900 mb-1.5">
                           {stat.number}
                         </div>
                         <div className="text-xs md:text-sm text-gray-600 font-medium tracking-wide">
@@ -179,14 +179,14 @@ const Certifications = () => {
                     </div>
 
                     {/* Certificate Details */}
-                    <CardContent className="p-8 font-serif">
+                    <CardContent className="p-8">
                       <div className="mb-2">
                         <span className="text-sm text-orange-500 uppercase tracking-wide font-medium">
                           {cert.type}
                         </span>
                       </div>
 
-                      <h3 className="text-2xl font-serif font-normal text-gray-900 mb-3">
+                      <h3 className="text-2xl font-normal text-gray-900 mb-3">
                         {cert.title}
                       </h3>
 
@@ -227,10 +227,10 @@ const Certifications = () => {
 
 
               <div className="relative">
-                <h3 className="text-3xl md:text-4xl font-serif font-normal text-gray-900 mb-4">
+                <h3 className="text-3xl md:text-4xl font-normal text-gray-900 mb-4">
                   Ready to Start Your <span className="text-orange-500">Fitness Journey?</span>
                 </h3>
-                <p className="text-gray-600 mb-8 max-w-2xl mx-auto font-serif text-lg">
+                <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
                   Train with a certified professional who brings years of experience and proven expertise.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

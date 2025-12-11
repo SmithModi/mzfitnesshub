@@ -9,11 +9,11 @@ import { GradientCard } from '../components/ui/gradient-card';
 
 const Services = () => {
   useEffect(() => {
-    document.title = "Services - MZ Fitness Hub Rajkot | Personal Training, Group Classes & Nutrition";
+    document.title = "Services - MZ Fitnezz Hub Rajkot | Personal Training, Group Classes & Nutrition";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Comprehensive fitness services at MZ Fitness Hub Rajkot. Personal training, group fitness classes, nutrition coaching, strength training, and wellness programs. Join Gujarat\'s premier fitness center.');
+      metaDescription.setAttribute('content', 'Comprehensive fitness services at MZ Fitnezz Hub Rajkot. Personal training, group fitness classes, nutrition coaching, strength training, and wellness programs. Join Gujarat\'s premier fitness center.');
     }
 
     const script = document.createElement('script');
@@ -22,11 +22,11 @@ const Services = () => {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Fitness Services",
-      "description": "Comprehensive fitness and wellness services offered at MZ Fitness Hub Rajkot",
+      "description": "Comprehensive fitness and wellness services offered at MZ Fitnezz Hub Rajkot",
       "url": "https://mzfitnezz.in/services",
       "provider": {
         "@type": "Gym",
-        "name": "MZ Fitness Hub",
+        "name": "MZ Fitnezz Hub",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "1st Floor, Anant Chaya Complex, Amin Marg",
@@ -134,7 +134,7 @@ const Services = () => {
 
 
       {/* Elegant Hero Section - Following Design System */}
-      <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 overflow-hidden font-serif">
+      <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 overflow-hidden">
         {/* Noisy Background */}
         <div className="absolute inset-0 bg-white">
         </div>
@@ -150,7 +150,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-normal text-gray-900 mb-6 tracking-tight leading-[1.1]"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-gray-900 mb-6 tracking-tight leading-[1.1]"
             >
               Transform Your Life
               <br />
@@ -162,7 +162,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-14 font-serif"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-14"
             >
               Experience our comprehensive range of premium fitness services,
               meticulously designed to elevate your wellness journey.
@@ -204,7 +204,7 @@ const Services = () => {
                         </div>
 
                         {/* Number */}
-                        <div className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-1.5">
+                        <div className="text-3xl md:text-4xl lg:text-5xl font-normal text-gray-900 mb-1.5">
                           {stat.number}
                         </div>
 
@@ -225,7 +225,7 @@ const Services = () => {
 
 
       {/* Services Grid with Elegant Background */}
-      <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden font-serif">
+      <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
         {/* Noisy Background */}
         <div className="absolute inset-0 bg-white">
         </div>
@@ -240,7 +240,7 @@ const Services = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-gray-900 mb-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-normal text-gray-900 mb-4">
               Our <span className="text-orange-500">Core Functions</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">

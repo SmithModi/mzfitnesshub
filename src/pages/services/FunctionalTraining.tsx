@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const FunctionalTraining = () => {
     useEffect(() => {
-        document.title = "Functional Training in Rajkot | MZ Fitness Hub";
+        document.title = "Functional Training in Rajkot | MZ Fitnezz Hub";
         window.scrollTo(0, 0);
     }, []);
 
@@ -21,7 +21,7 @@ const FunctionalTraining = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white font-serif relative">
+        <div className="min-h-screen bg-white relative">
 
             <div className="relative z-10">
                 <Header />

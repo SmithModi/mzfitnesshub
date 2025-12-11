@@ -7,7 +7,7 @@ import { GradientCard } from '../components/ui/gradient-card';
 
 const Wellness = () => {
     useEffect(() => {
-        document.title = "Wellness Services in Rajkot | MZ Fitness Hub";
+        document.title = "Wellness Services in Rajkot | MZ Fitnezz Hub";
         window.scrollTo(0, 0);
     }, []);
 
@@ -60,7 +60,7 @@ const Wellness = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-background font-serif">
+        <div className="min-h-screen bg-background">
             <Header />
 
             {/* Hero Section */}

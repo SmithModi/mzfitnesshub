@@ -7,7 +7,7 @@ import { GradientCard } from '../components/ui/gradient-card';
 
 const FloorTraining = () => {
     useEffect(() => {
-        document.title = "Floor Training in Rajkot | MZ Fitness Hub";
+        document.title = "Floor Training in Rajkot | MZ Fitnezz Hub";
         window.scrollTo(0, 0);
     }, []);
 
@@ -60,7 +60,7 @@ const FloorTraining = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-background font-serif">
+        <div className="min-h-screen bg-background">
             <Header />
 
             {/* Hero Section */}

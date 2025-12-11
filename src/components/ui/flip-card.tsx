@@ -2,8 +2,9 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { ArrowRight, Code2, Copy, Rocket, Zap } from 'lucide-react';
+import { ArrowRight, Code2, Copy, Rocket, Zap, Check } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export interface CardFlipProps {
     title?: string;
@@ -11,6 +12,8 @@ export interface CardFlipProps {
     description?: string;
     features?: string[];
     color?: string;
+    icon?: React.ElementType;
+    featureIcon?: React.ElementType;
 }
 
 const hexToHsl = (hex: string) => {
@@ -62,9 +65,13 @@ export default function CardFlip({
         'MVP Optimized',
         'Zero Setup Required',
     ],
-    color = '#ff2e88'
+    color = '#ff2e88',
+    icon,
+    featureIcon
 }: CardFlipProps) {
     const [isFlipped, setIsFlipped] = useState(false);
+    const MainIcon = icon || Rocket;
+    const FeatureIcon = featureIcon || Check;
 
     return (
         <div
@@ -125,7 +132,7 @@ export default function CardFlip({
                                 />
                             ))}
 
-                            {/* Central rocket icon */}
+                            {/* Central main icon */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div
                                     className={cn(
@@ -137,7 +144,7 @@ export default function CardFlip({
                                         'transition-all duration-500 group-hover:scale-110 group-hover:rotate-12',
                                     )}
                                 >
-                                    <Rocket className="h-6 w-6 text-white" />
+                                    <MainIcon className="h-6 w-6 text-white" />
                                 </div>
                             </div>
                         </div>
@@ -192,7 +199,7 @@ export default function CardFlip({
                         <div className="space-y-2">
                             <div className="mb-2 flex items-center gap-2">
                                 <div className="from-primary via-primary/90 to-primary/80 flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br">
-                                    <Code2 className="h-4 w-4 text-white" />
+                                    <MainIcon className="h-4 w-4 text-white" />
                                 </div>
                                 <h3 className="text-lg leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-2px] dark:text-white">
                                     {title}
@@ -205,9 +212,6 @@ export default function CardFlip({
 
                         <div className="space-y-2.5">
                             {features.map((feature, index) => {
-                                const icons = [Copy, Code2, Rocket, Zap];
-                                const IconComponent = icons[index % icons.length];
-
                                 return (
                                     <div
                                         key={feature}
@@ -221,7 +225,7 @@ export default function CardFlip({
                                         }}
                                     >
                                         <div className="bg-primary/10 dark:bg-primary/20 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-md">
-                                            <IconComponent className="text-primary h-3 w-3" />
+                                            <FeatureIcon className="text-primary h-3 w-3" />
                                         </div>
                                         <span className="font-medium">{feature}</span>
                                     </div>
@@ -231,7 +235,8 @@ export default function CardFlip({
                     </div>
 
                     <div className="relative z-10 mt-auto border-t border-slate-200 pt-4 dark:border-zinc-800">
-                        <div
+                        <Link
+                            to="/contact"
                             className={cn(
                                 'group/start relative',
                                 'flex items-center justify-between',
@@ -246,7 +251,7 @@ export default function CardFlip({
                             )}
                         >
                             <span className="group-hover/start:text-primary text-sm font-semibold text-zinc-900 transition-colors duration-300 dark:text-white">
-                                Start Building
+                                Start Your Journey
                             </span>
                             <div className="group/icon relative">
                                 <div
@@ -258,7 +263,7 @@ export default function CardFlip({
                                 />
                                 <ArrowRight className="text-primary relative z-10 h-4 w-4 transition-all duration-300 group-hover/start:translate-x-1 group-hover/start:scale-110" />
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>
