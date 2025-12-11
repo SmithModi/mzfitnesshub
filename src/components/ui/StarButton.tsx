@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './star-button.css';
 
-interface StarButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface StarButtonProps {
     children?: React.ReactNode;
+    className?: string;
 }
 
-const StarButton: React.FC<StarButtonProps> = ({ children = "Start Today", className, ...props }) => {
+const StarButton: React.FC<StarButtonProps> = ({ children = "Start Today", className }) => {
     return (
-        <button className={`star-button ${className || ''}`} {...props}>
+        <Link to="/contact" className={`star-button ${className || ''}`}>
             {children}
             <div className="star-1">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" version="1.1" style={{ shapeRendering: 'geometricPrecision', textRendering: 'geometricPrecision', imageRendering: 'auto', fillRule: 'evenodd', clipRule: 'evenodd' }} viewBox="0 0 784.11 815.53" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -63,7 +65,7 @@ const StarButton: React.FC<StarButtonProps> = ({ children = "Start Today", class
                     </g>
                 </svg>
             </div>
-        </button>
+        </Link>
     );
 };
 
