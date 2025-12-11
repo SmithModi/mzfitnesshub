@@ -21,7 +21,7 @@ const About = () => {
             "@type": "AboutPage",
             "name": "About MZ Fitnezz",
             "description": "Learn about Rajkot's premier fitness center and our commitment to health transformation",
-            "url": "https://mzfitnezz.in/about",
+            "url": "https://mzfitnezz.in/about/",
             "mainEntity": {
                 "@type": "Gym",
                 "name": "MZ Fitnezz",
